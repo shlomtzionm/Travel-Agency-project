@@ -1,0 +1,215 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "vacations",
+    "collectionId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+    "dateExported": "2024-09-30T14:09:41.610Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "168c7288-5bb5-41d6-ab09-196dff086201",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "get all",
+            "url": "http://localhost:4000/api/vacations-by-user/15",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-22T14:03:33.284Z",
+            "modified": "2024-08-07T16:43:20.885Z",
+            "headers": []
+        },
+        {
+            "_id": "3f19f389-e3df-42c1-b0d1-0617073ae971",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "valid-token",
+            "url": "http://localhost:4000/api/validate-token",
+            "method": "POST",
+            "sortNum": 12500,
+            "created": "2024-09-24T16:55:46.929Z",
+            "modified": "2024-09-24T16:57:04.594Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiLXqdec15XXntem15nXldefIiwibGFzdE5hbWUiOiLXnteg15PXnNeV15HXmdelIiwiZW1haWwiOiJzaGxvbXR6b3NoQGdtYWlsLmNvbSIsInJvbGVJZCI6MX0sImlhdCI6MTcyNzE5NjkyMCwiZXhwIjoxNzI3MjA3NzIwfQ.DvQoqmc1oauUqd6x-M5Qn_8w5uNliwvGN-0OHXF6Ric\"}",
+                "form": []
+            }
+        },
+        {
+            "_id": "725cd1fe-de71-4481-9fb1-401c04b644ce",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "valid-user",
+            "url": "http://localhost:4000/api/validate-user/1",
+            "method": "GET",
+            "sortNum": 13750,
+            "created": "2024-09-28T08:23:25.612Z",
+            "modified": "2024-09-28T08:23:54.986Z",
+            "headers": []
+        },
+        {
+            "_id": "5adf7a5d-84e7-4552-a325-01efadc834dd",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "register",
+            "url": "http://localhost:4000/api/register",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2024-07-23T18:10:00.412Z",
+            "modified": "2024-07-30T15:18:28.908Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"firstName\":\"guy\",\n  \"lastName\":\"even\",\n  \"email\":\"guy1@gmail.com\",\n  \"password\":\"122323\"\n\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7d4de6ed-0cbf-4499-9aee-794c0c87f8e5",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "get one by id",
+            "url": "http://localhost:4000/api/vacations-by-user/1/18",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-07-22T14:08:26.733Z",
+            "modified": "2024-09-28T09:56:00.897Z",
+            "headers": []
+        },
+        {
+            "_id": "c5785c00-f998-46cb-9b3b-a628aa8b0300",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:4000/api/login",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2024-07-27T17:11:59.125Z",
+            "modified": "2024-07-27T17:12:34.875Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"guy@gmail.com\",\n  \"password\":\"12345\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d25aec39-b323-46b8-bcd0-c40eb2560f07",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "add",
+            "url": "http://localhost:4000/api/vacations",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-07-22T14:19:12.054Z",
+            "modified": "2024-08-27T19:11:03.587Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "location",
+                        "value": "aaaaaaaaa"
+                    },
+                    {
+                        "name": "description",
+                        "value": "aaaaaa"
+                    },
+                    {
+                        "name": "startDate",
+                        "value": "2024-08-28T21:31"
+                    },
+                    {
+                        "name": "endDate",
+                        "value": "2024-09-28T21:31"
+                    },
+                    {
+                        "name": "price",
+                        "value": "2000"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\shlom\\Downloads\\WhatsApp Image 2024-07-20 at 12.34.12.jpeg"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "c69dcda3-afd4-42b8-ad75-4ce962830e82",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "update ",
+            "url": "http://localhost:4000/api/vacations/9",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-08-29T21:20:19.107Z",
+            "modified": "2024-09-01T17:35:46.304Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "location",
+                        "value": "tailand"
+                    },
+                    {
+                        "name": "description",
+                        "value": "hi"
+                    },
+                    {
+                        "name": "price",
+                        "value": "100"
+                    },
+                    {
+                        "name": "startDate",
+                        "value": "10-10-24 00:00"
+                    },
+                    {
+                        "name": "endDate",
+                        "value": "10-12-24 00:00"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\shlom\\Pictures\\Screenshots\\Screenshot 2024-08-12 201322.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "99e7d392-2ae7-48ca-869d-48788fe64922",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "updateLikeState",
+            "url": "http://localhost:4000/api/like/15/6",
+            "method": "POST",
+            "sortNum": 35000,
+            "created": "2024-08-01T14:28:42.473Z",
+            "modified": "2024-08-06T16:15:12.471Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"isLiked\":true}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f7ae6166-6e55-4cad-9af4-c58a201ceb52",
+            "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
+            "containerId": "",
+            "name": "delete vacation",
+            "url": "http://localhost:4000/api/vacations/2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-07-27T16:55:35.199Z",
+            "modified": "2024-07-27T16:56:01.693Z",
+            "headers": []
+        }
+    ],
+    "ref": "TvTEdaW-2fXjw4FxX_AexOVl-haID-e-JkRWGOA4Sn5MWSvZvGD_DF_3kojh2VIEqrNwUcp1WTOSrgMAJpm7lA"
+}

@@ -9,7 +9,6 @@ import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from "@m
 
 interface FilterProps {
   setFilteredVacations: (vacations: VacationModel[]) => void;
-  setCurrentPage: (number: number) => void;
 }
 
 function Filter(props: FilterProps): JSX.Element {
@@ -44,8 +43,9 @@ function Filter(props: FilterProps): JSX.Element {
       default:
         filteredVacations = vacationsFromRedux;
         break;
-    }
-    props.setCurrentPage(currentPage);
+    } 
+     const action = currentPageActions.updateCurrentPage(currentPage);
+    store.dispatch(action);
     props.setFilteredVacations(filteredVacations);
   }
 

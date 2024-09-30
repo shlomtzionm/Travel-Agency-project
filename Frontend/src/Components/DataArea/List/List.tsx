@@ -14,10 +14,10 @@ import { Role } from "../../../Models/enums";
 function List(): JSX.Element {
   const user = useSelector<AppState, UserModel>(store => store.user);
   const vacationsFromRedux = useSelector<AppState, VacationModel[]>(store => store.vacations);
+  const currentPage = useSelector<AppState, number>(store => store.currentPage);
 
   const [filteredVacations, setFilteredVacations] = useState<VacationModel[]>(vacationsFromRedux);
   const [vacations, setVacations] = useState<VacationModel[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
     if (user) {
@@ -30,13 +30,13 @@ function List(): JSX.Element {
 
   return (
     <div className="List">
-      {user.roleId === Role.User && <Filter setCurrentPage={setCurrentPage} setFilteredVacations={setFilteredVacations} />}
+      {user.roleId === Role.User && <Filter setFilteredVacations={setFilteredVacations} />}
       <div className="CardsContainer">
         {vacations.length === 0 && <p>there are no vacations</p>}
         {vacations.length > 0 && vacations.map(vacation => <VacationCard vacation={vacation} key={vacation.id} role={user.roleId} />)}
       </div>
-      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations} setCurrentPage={setCurrentPage} currentPage={currentPage} />}
-      {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations} setCurrentPage={setCurrentPage} currentPage={currentPage} />}
+      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations}  />}
+      {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations}  />}
     </div>
   );
 }
