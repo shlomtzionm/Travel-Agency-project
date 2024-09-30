@@ -69,12 +69,10 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
   return (
     <div>
       <Fragment>
-        <Button sx={{ color: "black", marginLeft: "-12px" }} className="menuItemC" onClick={handleClickOpen}>
-          Update
-        </Button>
+        <Button sx={{ color: "black", marginLeft: "-12px" }} onClick={handleClickOpen}>Update</Button>
         <Dialog open={openDialog} onClose={handleClose}>
           <DialogTitle>Update</DialogTitle>
-          <DialogContent className="UpdateDialogMy">
+          <DialogContent >
             <form className="UpdateForm" onSubmit={handleSubmit(onSubmit)}>
               <TextField
                 type="text"

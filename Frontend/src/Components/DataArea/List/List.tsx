@@ -31,7 +31,7 @@ function List(): JSX.Element {
   return (
     <div className="List">
       {user.roleId === Role.User && <Filter setCurrentPage={setCurrentPage} setFilteredVacations={setFilteredVacations} />}
-      <div className="cardsContainer">
+      <div className="CardsContainer">
         {vacations.length === 0 && <p>there are no vacations</p>}
         {vacations.length > 0 && vacations.map(vacation => <VacationCard vacation={vacation} key={vacation.id} role={user.roleId} />)}
       </div>

@@ -24,7 +24,7 @@ export function Menu(): JSX.Element {
       {!user && (
         <>
           <span>Hello Guest</span>
-          <img src="icon.ico" className="icon"/>
+          <img src="icon.ico" className="Icon"/>
         </>
       )}
 
@@ -33,25 +33,25 @@ export function Menu(): JSX.Element {
           <span>
             Hello {user.firstName} {user.lastName}
           </span>
-          <img src="icon.ico" className="icon"/>
-          <div className="btns">
+          <img src="icon.ico" className="Icon"/>
+          <div className="MenuButtons">
             {user.roleId === Role.Admin && (
               <>
-                <NavLink to="/add" className="noneDecor">
+                <NavLink to="/add" className="NoneDecor">
                   <em>Add</em>
                 </NavLink>
-                <NavLink className="noneDecor" to="/list">
+                <NavLink className="NoneDecor" to="/list">
                   <em>List</em>
                 </NavLink>
-                <button className="textBtn" onClick={()=>createReport(vacations)}>
+                <button className="TextBtn" onClick={()=>createReport(vacations)}>
                   <em>Csv</em>
                 </button>
-                <NavLink className="noneDecor" to="/chart">
+                <NavLink className="NoneDecor" to="/chart">
                   <em>Chart</em>
                 </NavLink>
               </>
             )}
-            <NavLink className="noneDecor" to="/login" onClick={logout}>
+            <NavLink className="NoneDecor" to="/login" onClick={logout}>
               <em>Logout</em>
             </NavLink>
           </div>

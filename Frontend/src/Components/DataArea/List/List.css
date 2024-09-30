@@ -20,7 +20,7 @@
   bottom: 0;
 }
 
-.cardsContainer {
+.CardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -30,7 +30,7 @@
   margin: 8px auto;
 }
 
-.cardsContainer::-webkit-scrollbar {
+.CardsContainer::-webkit-scrollbar {
   width: 0; /* Hides the scrollbar */
   background: transparent; /* Ensures no background is visible */
 }

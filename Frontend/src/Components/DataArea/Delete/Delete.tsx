@@ -26,7 +26,7 @@ export default function Delete(props: DeleteProps) {
   }
 
   return (
-    <div className="Delete">
+    <div >
       <Button sx={{ color: "black", marginLeft: "-12px" }} onClick={handleClickOpen}>
         Delete
       </Button>

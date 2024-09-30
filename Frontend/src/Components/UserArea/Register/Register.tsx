@@ -40,7 +40,7 @@ export function Register(): JSX.Element {
 
       </form>
       <NavLink to={"/login"}>
-        <em className="link">have an account?</em>
+        <em >have an account?</em>
       </NavLink>
     </div>
   );

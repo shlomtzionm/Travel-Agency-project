@@ -30,13 +30,9 @@ function Add(): JSX.Element {
 
   async function send(vacation: VacationModel): Promise<void> {
     try {
-      if (!image) {
-        notify.error("Please upload an image.");
-        return;
-      }
       vacation.image = image;
-      vacation.startDate = startDate?.format("YYYY-MM-DD") || '';
-      vacation.endDate = endDate?.format("YYYY-MM-DD") || '';
+      vacation.startDate = startDate?.format("YYYY-MM-DD") 
+      vacation.endDate = endDate?.format("YYYY-MM-DD") 
       await vacationServices.addVacation(vacation);
       notify.success("You added a vacation");
       navigate("/list");
@@ -47,7 +43,7 @@ function Add(): JSX.Element {
 
   return (
     <div className="Add">
-      <form className="addForm" onSubmit={handleSubmit(send)}>
+      <form className="AddForm" onSubmit={handleSubmit(send)}>
         <TextField 
           type="text" 
           label="Location:" 
@@ -117,7 +113,7 @@ function Add(): JSX.Element {
 
         <InputFileUpload setImage={handleImage} />
 
-        <img className="addImage" src={imageUrl} alt="Preview" />
+        <img className="AddImage" src={imageUrl} alt="Preview" />
 
         <Button type="submit" variant="contained">
           Add

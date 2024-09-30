@@ -16,7 +16,7 @@
   font-size: large;
 }
 
-.noneDecor {
+.NoneDecor {
   color: #fff8e9;
   text-decoration: none;
   font-family: fantasy;
@@ -24,14 +24,14 @@
   font-size: large;
 }
 
-.btns {
+.MenuButtons {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
   width: 200px;
 }
 
-.textBtn {
+.TextBtn {
   all: unset; /* Remove all default browser styling */
   cursor: pointer; /* Show pointer cursor on hover */
   color: inherit; /* Inherit text color from parent */
@@ -46,27 +46,27 @@
   font-size: large;
 }
 
-.textBtn:hover {
+.TextBtn:hover {
   color: #ffffff; /* Change text color on hover */
   background-color: transparent; /* Ensure background stays transparent */
 }
 
-.textBtn:focus {
+.TextBtn:focus {
   outline: none; /* Remove focus outline */
 }
 
-.noneDecor:active {
+.NoneDecor:active {
   color: #fcfcfc;
 }
 
-.icon {
+.Icon {
   height: 90%;
   border-radius: 1000px;
   position: absolute;
   left: calc(50% - 25px);
 }
 
-.icon:active {
+.Icon:active {
   width: 150px;
   height: 150px;
   border-radius: 10000px;

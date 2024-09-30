@@ -7853,3 +7853,18 @@ Message: Invalid email format.
 Stack: undefined
 ---------------------------------------
 
+Time: Mon Sep 30 2024 15:06:32 GMT+0300 (שעון ישראל (קיץ))
+Message: Missing image.
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 15:06:53 GMT+0300 (שעון ישראל (קיץ))
+Message: Missing image.
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 15:42:27 GMT+0300 (שעון ישראל (קיץ))
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+

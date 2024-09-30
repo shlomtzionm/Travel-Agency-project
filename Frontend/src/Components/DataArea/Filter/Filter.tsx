@@ -5,7 +5,7 @@ import { filterServices } from "../../../Services/filterServices";
 import { useEffect } from "react";
 import "./Filter.css";
 import { FilterState } from "../../../Models/enums";
-import { FormControl, InputLabel, Select, MenuItem,SelectChangeEvent  } from "@mui/material";
+import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
 interface FilterProps {
   setFilteredVacations: (vacations: VacationModel[]) => void;
@@ -15,9 +15,9 @@ interface FilterProps {
 function Filter(props: FilterProps): JSX.Element {
   const dispatch = useDispatch();
 
-  const vacationsFromRedux = useSelector<AppState, VacationModel[]>(store => store.vacations);
-  const filterState = useSelector<AppState, FilterState>(store => store.filterState);
-  const currentPage = useSelector<AppState, number>(store => store.currentPage);
+  const vacationsFromRedux = useSelector<AppState, VacationModel[]>((store) => store.vacations);
+  const filterState = useSelector<AppState, FilterState>((store) => store.filterState);
+  const currentPage = useSelector<AppState, number>((store) => store.currentPage);
 
   function handleClick(event: SelectChangeEvent<FilterState>) {
     const value = event.target.value as FilterState;
@@ -64,7 +64,7 @@ function Filter(props: FilterProps): JSX.Element {
         <InputLabel>Filter</InputLabel>
         <Select
           label="Filter"
-          onChange={(event:SelectChangeEvent<FilterState>)=> {
+          onChange={(event: SelectChangeEvent<FilterState>) => {
             handleClick(event);
             resetCurrentPage();
           }}

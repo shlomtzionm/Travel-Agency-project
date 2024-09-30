@@ -1,25 +1,24 @@
-.addForm {
+.AddForm {
   margin-top: 30px;
   height: 70%;
   scrollbar-width: 4px;
- 
 }
 
-.addImage {
+.AddImage {
   width: 100px;
   height: 100px;
 }
 
-.addForm::-webkit-scrollbar {
+.AddForm::-webkit-scrollbar {
   width: 4px;
 }
 
-.addForm::-webkit-scrollbar-thumb {
+.AddForm::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.295);
   border-radius: 4px;
 }
 
-.dateDiv{
+.dateDiv {
   display: flex;
   height: fit-content;
 }

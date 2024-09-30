@@ -8,7 +8,7 @@ function Home(): JSX.Element {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <div className="Home">
+    <div >
       {!user && <Login/>}
       {user && <LoginAuthorization><List/></LoginAuthorization>}
     </div>
