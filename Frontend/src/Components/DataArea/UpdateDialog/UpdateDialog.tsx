@@ -26,38 +26,34 @@ type UpdateDialogProps = {
 };
 
 export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
-  const user = useSelector<AppState, UserModel>(store => store.user);
-  const vacation = useSelector<AppState, VacationModel>(store => store.vacations.find(v => v.id === props.vacation.id));
+  const user = useSelector<AppState, UserModel>((store) => store.user);
+  const vacation = useSelector<AppState, VacationModel>((store) => store.vacations.find((v) => v.id === props.vacation.id));
 
-  const [open, setOpen] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
+
   const [image, setImage] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState<string>(vacation?.imageUrl || "/path/to/default-image.jpg");
+  const [imageUrl, setImageUrl] = useState<string>(vacation?.imageUrl);
 
-  const [startDate, setStartDate] = useState<Dayjs>(dayjs(vacation.startDate));
-  const [endDate, setEndDate] = useState<Dayjs>(dayjs(vacation.endDate));
+  const [startDate, setStartDate] = useState<Dayjs>(dayjs(vacation?.startDate));
+  const [endDate, setEndDate] = useState<Dayjs>(dayjs(vacation?.endDate));
 
-  const { register, handleSubmit,formState: { errors } } = useForm<VacationModel>({
-    defaultValues: vacation,
-  });
+  const { register, handleSubmit, formState: { errors },} = useForm<VacationModel>({ defaultValues: vacation,});
 
-  const handleClickOpen = () => setOpen(true);
+  const handleClickOpen = () => setOpenDialog(true);
+
   const handleClose = () => {
-    setOpen(false);
+    setOpenDialog(false);
     props.handleCloseMenu();
   };
 
   const onSubmit = async (vacation: VacationModel): Promise<void> => {
     try {
-      delete vacation.image;
-      const updatedVacation = {
-        ...vacation,
-        startDate: startDate.format("YYYY-MM-DD"),
-        endDate: endDate.format("YYYY-MM-DD"),
-        image: image || null,
-      };
+      vacation.startDate = startDate.format("YYYY-MM-DD");
+      vacation.endDate = endDate.format("YYYY-MM-DD");
+      vacation.image = image;
 
-      await vacationServices.updateVacation(user.id, vacation.id, updatedVacation);
-      props.handleCloseMenu();
+      await vacationServices.updateVacation(user.id, vacation.id, vacation);
+      handleClose();
       notify.success("Vacation updated successfully!");
     } catch (error: any) {
       notify.error("Failed to update vacation");
@@ -76,37 +72,36 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
         <Button sx={{ color: "black", marginLeft: "-12px" }} className="menuItemC" onClick={handleClickOpen}>
           Update
         </Button>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog open={openDialog} onClose={handleClose}>
           <DialogTitle>Update</DialogTitle>
           <DialogContent className="UpdateDialogMy">
             <form className="UpdateForm" onSubmit={handleSubmit(onSubmit)}>
-            <TextField 
-          type="text" 
-          label="Location:" 
-          variant="outlined" 
-          {...register("location", { maxLength: 1000, required: "Location is required" })} 
-          error={!!errors.location}
-          helperText={errors.location?.message}
-        />
+              <TextField
+                type="text"
+                label="Location:"
+                variant="outlined"
+                {...register("location", { maxLength: 1000, required: "Location is required" })}
+                error={!!errors.location}
+                helperText={errors.location?.message}
+              />
 
-        <TextField 
-          type="text" 
-          label="Description:" 
-          variant="outlined" 
-          {...register("description", { maxLength: 1000, required: "Description is required" })} 
-          error={!!errors.description}
-          helperText={errors.description?.message}
-        />
+              <TextField
+                type="text"
+                label="Description:"
+                variant="outlined"
+                {...register("description", { maxLength: 1000, required: "Description is required" })}
+                error={!!errors.description}
+                helperText={errors.description?.message}
+              />
 
-        <TextField 
-          type="number" 
-          label="Price:" 
-          variant="outlined" 
-          {...register("price", { min: { value: 0, message: "Price must be at least 0" }, required: "Price is required", max: { value: 10000, message: "Price cannot exceed 10,000" } })} 
-          error={!!errors.price}
-          helperText={errors.price?.message}
-          
-        />
+              <TextField
+                type="number"
+                label="Price:"
+                variant="outlined"
+                {...register("price", { min: { value: 0, message: "Price must be at least 0" }, required: "Price is required", max: { value: 10000, message: "Price cannot exceed 10,000" } })}
+                error={!!errors.price}
+                helperText={errors.price?.message}
+              />
 
               <div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -114,7 +109,7 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
                     <DatePicker
                       label="Start date:"
                       value={startDate}
-                      onChange={newValue => setStartDate(newValue)}
+                      onChange={(newValue) => setStartDate(newValue)}
                       slotProps={{
                         textField: {
                           required: true,
@@ -132,7 +127,7 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
                     <DatePicker
                       label="End date:"
                       value={endDate}
-                      onChange={newValue => setEndDate(newValue)}
+                      onChange={(newValue) => setEndDate(newValue)}
                       slotProps={{
                         textField: {
                           required: true,
@@ -145,7 +140,7 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
                 </LocalizationProvider>
               </div>
               <img src={imageUrl} style={{ width: "200px", height: "180px" }} alt="Vacation" />
-              <InputFileUpload  setImage={handleImage} />
+              <InputFileUpload setImage={handleImage} />
               <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
                 <Button type="submit">Update</Button>

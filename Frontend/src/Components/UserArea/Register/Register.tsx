@@ -6,7 +6,7 @@ import { UserModel } from "../../../Models/userModel";
 import { Button, TextField } from "@mui/material";
 
 export function Register(): JSX.Element {
-  const { register, handleSubmit } = useForm<UserModel>();
+  const { register, handleSubmit,formState: { errors } } = useForm<UserModel>();
   const navigate = useNavigate();
 
   async function send(user: UserModel): Promise<void> {
@@ -22,13 +22,21 @@ export function Register(): JSX.Element {
   return (
     <div >
       <form onSubmit={handleSubmit(send)}>
-        <TextField   label="First name:" variant="outlined" {...register("firstName")} />
-        <TextField   label="Last name:" variant="outlined" {...register("lastName")} />
-        <TextField   label="Email:" variant="outlined" {...register("email")} />
-        <TextField type="password"  label="Password:" variant="outlined" {...register("password")} />
+        <TextField   label="First name:" variant="outlined"  {...register("firstName", { maxLength: 1000, required: "First name is required" })}
+                error={!!errors.firstName}
+                helperText={errors.firstName?.message} />
+        <TextField   label="Last name:" variant="outlined"  {...register("lastName", { maxLength: 1000, required: "Last name is required" })}
+                error={!!errors.lastName}
+                helperText={errors.lastName?.message} />
+        <TextField   label="Email:" variant="outlined"  {...register("email", { maxLength: 1000, required: "Email is required" })}
+                error={!!errors.email}
+                helperText={errors.email?.message} />
+        <TextField type="password"  label="Password:" variant="outlined"  {...register("password", { maxLength: 1000,minLength:4, required: "Password is required" })}
+                error={!!errors.password}
+                helperText={errors.password?.message} />
 
 
-        <Button type="submit" variant="contained">Login</Button>
+        <Button type="submit" variant="contained">Register</Button>
 
       </form>
       <NavLink to={"/login"}>

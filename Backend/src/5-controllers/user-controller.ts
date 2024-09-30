@@ -18,14 +18,12 @@ class UserController {
     try {
       const user = new UserModel(request.body);
       const token = await userServices.register(user);
-      console.log(token);
-      console.log(response.status(StatusCode.Created).json(token));
-      
-      
+     response.status(StatusCode.Created).json(token);
     } catch (err: any) {
       next(err);
     }
   }
+ 
 
   private async login(request: Request, response: Response, next: NextFunction) {
     try {

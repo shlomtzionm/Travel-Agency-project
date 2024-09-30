@@ -10,10 +10,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Change to flex-start to keep actions at the bottom */
+  justify-content: space-between; 
   margin: 8px;
   background-color: #ffffff;
-  height: 80%;
+  height: 50%;
   width: 30%;
   border: 1px solid rgb(201, 200, 199);
   
@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
-  align-items: flex-start; /* Make sure this is properly closed with a semicolon */
+  align-items: flex-start; 
   text-align: start;
   height: 80%;
   margin: 2px 0;

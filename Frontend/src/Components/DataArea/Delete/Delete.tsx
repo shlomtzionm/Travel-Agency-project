@@ -5,9 +5,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
 import { notify } from "../../../Utils/Notify";
 import { vacationServices } from "../../../Services/vacationServices";
-import { useSelector } from "react-redux";
-import { AppState } from "../../../redux/store";
-import { UserModel } from "../../../Models/userModel";
 
 type DeleteProps = {
   vacationId: number;

@@ -1,8 +1,8 @@
 .addForm {
   margin-top: 30px;
-  height: 425px;
-  overflow-y: auto;
+  height: 70%;
   scrollbar-width: 4px;
+ 
 }
 
 .addImage {
