@@ -1,0 +1,14 @@
+.MyLikeButton {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  width: 60px;
+  height: 30px;
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Center vertically */
+  justify-content: flex-end; /* Center horizontally */
+  font-size: 14px; /* Adjust font size */
+  color: #000000; /* Adjust text color */
+  box-shadow: 0 4px 6px rgb(129, 129, 129); /* Add subtle shadow */
+  margin: 4px;
+  font-family: monospace;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+    
+   
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+ 
+    <input type="file" id="fileInput">
+    <div id="errorContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

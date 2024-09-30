@@ -1,0 +1,46 @@
+#MyCard .MyLikeButton,
+#MyCard .OptionMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#MyCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Change to flex-start to keep actions at the bottom */
+  margin: 8px;
+  background-color: #ffffff;
+  height: 80%;
+  width: 30%;
+  border: 1px solid rgb(201, 200, 199);
+  
+}
+
+.CardContent {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  align-items: flex-start; /* Make sure this is properly closed with a semicolon */
+  text-align: start;
+  height: 80%;
+  margin: 2px 0;
+  
+}
+
+.CardContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+.CardContent::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.295);
+  border-radius: 4px;
+}
+
+.CardImage {
+  width: 100%;
+  height: 200px;
+}
+

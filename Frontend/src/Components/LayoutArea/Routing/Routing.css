@@ -1,0 +1,6 @@
+.Routing {
+  height: 100vh;
+  padding: 1px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.785), rgba(255, 255, 255, 0.918)), /* Orange overlay with lower opacity */ url("../../../assets/images/icon-background.png"); /* Your background image */
+  background-position: center; /* Centers the image */
+}

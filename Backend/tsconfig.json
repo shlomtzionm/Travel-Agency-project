@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "removeComments": true,
+        "lib": ["es2021", "dom"]
+    }
+}
