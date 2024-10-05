@@ -15,7 +15,11 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs, { Dayjs } from "dayjs";
 
 function Add(): JSX.Element {
-  const { register, handleSubmit, formState: { errors } } = useForm<VacationModel>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<VacationModel>();
   const navigate = useNavigate();
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string>(defaultImage);
@@ -31,8 +35,8 @@ function Add(): JSX.Element {
   async function send(vacation: VacationModel): Promise<void> {
     try {
       vacation.image = image;
-      vacation.startDate = startDate?.format("YYYY-MM-DD") 
-      vacation.endDate = endDate?.format("YYYY-MM-DD") 
+      vacation.startDate = startDate?.format("YYYY-MM-DD");
+      vacation.endDate = endDate?.format("YYYY-MM-DD");
       await vacationServices.addVacation(vacation);
       notify.success("You added a vacation");
       navigate("/list");
@@ -44,29 +48,29 @@ function Add(): JSX.Element {
   return (
     <div className="Add">
       <form className="AddForm" onSubmit={handleSubmit(send)}>
-        <TextField 
-          type="text" 
-          label="Location:" 
-          variant="outlined" 
-          {...register("location", { maxLength: 1000, required: "Location is required" })} 
+        <TextField
+          type="text"
+          label="Location:"
+          variant="outlined"
+          {...register("location", { maxLength: 1000, required: "Location is required" })}
           error={!!errors.location}
           helperText={errors.location?.message}
         />
 
-        <TextField 
-          type="text" 
-          label="Description:" 
-          variant="outlined" 
-          {...register("description", { maxLength: 1000, required: "Description is required" })} 
+        <TextField
+          type="text"
+          label="Description:"
+          variant="outlined"
+          {...register("description", { maxLength: 1000, required: "Description is required" })}
           error={!!errors.description}
           helperText={errors.description?.message}
         />
 
-        <TextField 
-          type="number" 
-          label="Price:" 
-          variant="outlined" 
-          {...register("price", { min: { value: 0, message: "Price must be at least 0" }, required: "Price is required", max: { value: 10000, message: "Price cannot exceed 10,000" } })} 
+        <TextField
+          type="number"
+          label="Price:"
+          variant="outlined"
+          {...register("price", { min: { value: 0, message: "Price must be at least 0" }, required: "Price is required", max: { value: 10000, message: "Price cannot exceed 10,000" } })}
           error={!!errors.price}
           helperText={errors.price?.message}
         />

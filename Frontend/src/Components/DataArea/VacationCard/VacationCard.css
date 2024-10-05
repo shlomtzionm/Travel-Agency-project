@@ -10,24 +10,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: space-between;
   margin: 8px;
   background-color: #ffffff;
   height: 50%;
   width: 30%;
   border: 1px solid rgb(201, 200, 199);
-  
 }
 
 .CardContent {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  align-items: flex-start; 
+  align-items: flex-start;
   text-align: start;
   height: 80%;
   margin: 2px 0;
-  
 }
 
 .CardContent::-webkit-scrollbar {
@@ -43,4 +41,3 @@
   width: 100%;
   height: 200px;
 }
-

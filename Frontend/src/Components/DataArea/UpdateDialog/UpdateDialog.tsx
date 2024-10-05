@@ -26,8 +26,8 @@ type UpdateDialogProps = {
 };
 
 export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
-  const user = useSelector<AppState, UserModel>((store) => store.user);
-  const vacation = useSelector<AppState, VacationModel>((store) => store.vacations.find((v) => v.id === props.vacation.id));
+  const user = useSelector<AppState, UserModel>(store => store.user);
+  const vacation = useSelector<AppState, VacationModel>(store => store.vacations.find(v => v.id === props.vacation.id));
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -37,7 +37,11 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
   const [startDate, setStartDate] = useState<Dayjs>(dayjs(vacation?.startDate));
   const [endDate, setEndDate] = useState<Dayjs>(dayjs(vacation?.endDate));
 
-  const { register, handleSubmit, formState: { errors },} = useForm<VacationModel>({ defaultValues: vacation,});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<VacationModel>({ defaultValues: vacation });
 
   const handleClickOpen = () => setOpenDialog(true);
 
@@ -69,10 +73,12 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
   return (
     <div>
       <Fragment>
-        <Button sx={{ color: "black", marginLeft: "-12px" }} onClick={handleClickOpen}>Update</Button>
+        <Button sx={{ color: "black", marginLeft: "-12px" }} onClick={handleClickOpen}>
+          Update
+        </Button>
         <Dialog open={openDialog} onClose={handleClose}>
           <DialogTitle>Update</DialogTitle>
-          <DialogContent >
+          <DialogContent>
             <form className="UpdateForm" onSubmit={handleSubmit(onSubmit)}>
               <TextField
                 type="text"
@@ -107,7 +113,7 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
                     <DatePicker
                       label="Start date:"
                       value={startDate}
-                      onChange={(newValue) => setStartDate(newValue)}
+                      onChange={newValue => setStartDate(newValue)}
                       slotProps={{
                         textField: {
                           required: true,
@@ -125,7 +131,7 @@ export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
                     <DatePicker
                       label="End date:"
                       value={endDate}
-                      onChange={(newValue) => setEndDate(newValue)}
+                      onChange={newValue => setEndDate(newValue)}
                       slotProps={{
                         textField: {
                           required: true,

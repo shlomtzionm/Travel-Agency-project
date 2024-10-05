@@ -1,7 +1,18 @@
 .Copyrights {
-  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: x-small;
+  font-size: small;
+  background-color: rgb(241, 243, 245);
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 22px;
+  padding: 16px;
+}
+
+
+.Header {
+  font-size: medium;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(138, 138, 138, 0.397);
 }

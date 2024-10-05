@@ -28,7 +28,7 @@ CREATE TABLE `likes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `userId` int NOT NULL,
   `vacationId` int NOT NULL,
-  `isLiked` tinyint(1) NOT NULL,
+  `isSaved` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   KEY `vacationId` (`vacationId`),

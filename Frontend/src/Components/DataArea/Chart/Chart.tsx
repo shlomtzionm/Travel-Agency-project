@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const Chart = () => {
-  const vacations = useSelector<AppState, VacationModel[]>((store) => store.vacations);
+  const vacations = useSelector<AppState, VacationModel[]>(store => store.vacations);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Chart = () => {
       {
         color: "#007bff",
         type: "column",
-        dataPoints: vacations.map((v) => ({ label: v.location, y: v.likesCount })),
+        dataPoints: vacations.map(v => ({ label: v.location, y: v.likesCount })),
       },
     ],
   };

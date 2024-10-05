@@ -15,7 +15,7 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 type InputFileUploadProps = {
-  setImage: (file: File) => void; // Updated
+  setImage: (file: File) => void;
 };
 
 export default function InputFileUpload(props: InputFileUploadProps) {
@@ -23,14 +23,14 @@ export default function InputFileUpload(props: InputFileUploadProps) {
     <div className="UploadInput">
       <Button component="label" role={undefined} variant="contained" tabIndex={-1} startIcon={<CloudUploadIcon />}>
         Upload file
-        <VisuallyHiddenInput 
+        <VisuallyHiddenInput
           type="file"
           accept="image/*"
           onChange={event => {
             const file = event.target.files[0];
             props.setImage(file);
           }}
-          multiple={false} // Ensure only one file can be selected
+          multiple={false}
         />
       </Button>
     </div>

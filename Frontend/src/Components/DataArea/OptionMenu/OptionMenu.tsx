@@ -13,7 +13,6 @@ type OptionMenuProps = {
 
 export default function OptionMenu(props: OptionMenuProps) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
- 
 
   const open = Boolean(anchorEl);
 
@@ -25,7 +24,6 @@ export default function OptionMenu(props: OptionMenuProps) {
     setAnchorEl(null);
   };
 
-
   const ITEM_HEIGHT = 48;
 
   return (
@@ -33,7 +31,11 @@ export default function OptionMenu(props: OptionMenuProps) {
       <IconButton aria-label="more" id="long-button" aria-controls={open ? "long-menu" : undefined} aria-expanded={open ? "true" : undefined} aria-haspopup="true" onClick={handleOpenMenu}>
         <MoreHorizIcon />
       </IconButton>
-      <Menu id="long-menu"MenuListProps={{ "aria-labelledby": "long-button", }}  anchorEl={anchorEl} open={open}
+      <Menu
+        id="long-menu"
+        MenuListProps={{ "aria-labelledby": "long-button" }}
+        anchorEl={anchorEl}
+        open={open}
         onClose={handleCloseMenu}
         PaperProps={{
           style: {

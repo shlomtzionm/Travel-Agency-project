@@ -14,13 +14,13 @@ class VacationServices {
     return response.data;
   }
 
-  public async updateIsLiked(isLiked: boolean, userId: number, vacationId: number): Promise<VacationModel> {
+  public async updateIsSaved(isSaved: boolean, userId: number, vacationId: number): Promise<VacationModel> {
     const token: string = await userService.waitForToken();
     const options: AxiosRequestConfig = appConfig.axiosOptions(token);
-    const isLikedValue = isLiked ? 1 : 0;
-    const response = await axios.put(`${appConfig.likesUrl}${userId}/${vacationId}`, { isLiked: isLikedValue }, options);
+    const isSavedValue = isSaved ? 1 : 0;
+    const response = await axios.put(`${appConfig.likesUrl}${userId}/${vacationId}`, { isSaved: isSavedValue }, options);
     const updatedVacation: VacationModel = response.data;
-    const action = vacationActions.updateIsLiked(updatedVacation);
+    const action = vacationActions.updateIsSaved(updatedVacation);
     store.dispatch(action);
     return updatedVacation;
   }

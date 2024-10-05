@@ -901,10 +901,10 @@ Stack: undefined
 ---------------------------------------
 
 Time: Tue Jul 30 2024 19:12:21 GMT+0300 (Israel Daylight Time)
-Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isLiked, 
+Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isSaved, 
             COUNT(l.userId) AS likesCount, 
             CONCAT('' at line 3
-Stack: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isLiked, 
+Stack: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isSaved, 
             COUNT(l.userId) AS likesCount, 
             CONCAT('' at line 3
     at Packet.asError (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
@@ -1055,10 +1055,10 @@ Stack: Error: Unknown column 'vacationId' in 'on clause'
 ---------------------------------------
 
 Time: Tue Jul 30 2024 19:24:41 GMT+0300 (Israel Daylight Time)
-Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isLiked, 
+Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isSaved, 
             COUNT(l.userId) AS likesCount, 
             CONCAT('' at line 3
-Stack: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isLiked, 
+Stack: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) AS isSaved, 
             COUNT(l.userId) AS likesCount, 
             CONCAT('' at line 3
     at Packet.asError (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
@@ -1075,11 +1075,11 @@ Stack: Error: You have an error in your SQL syntax; check the manual that corres
 
 Time: Tue Jul 30 2024 19:27:51 GMT+0300 (Israel Daylight Time)
 Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?
-    ), 1, 0) AS isLiked, 
+    ), 1, 0) AS isSaved, 
     COUNT(l.id) AS likesCount, 
     CONCAT('http://l' at line 6
 Stack: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?
-    ), 1, 0) AS isLiked, 
+    ), 1, 0) AS isSaved, 
     COUNT(l.id) AS likesCount, 
     CONCAT('http://l' at line 6
     at Packet.asError (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
@@ -1127,11 +1127,11 @@ Stack: Error: Unknown column 'l.vacationId' in 'where clause'
 Time: Tue Jul 30 2024 19:31:41 GMT+0300 (Israel Daylight Time)
 Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ELECT 
     v.*, 
-    IF(ul.userId IS NOT NULL, 1, 0) AS isLiked, 
+    IF(ul.userId IS NOT NULL, 1, 0) AS isSaved, 
     COUNT(l.us' at line 1
 Stack: Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ELECT 
     v.*, 
-    IF(ul.userId IS NOT NULL, 1, 0) AS isLiked, 
+    IF(ul.userId IS NOT NULL, 1, 0) AS isSaved, 
     COUNT(l.us' at line 1
     at Packet.asError (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
@@ -1393,8 +1393,8 @@ Stack: undefined
 ---------------------------------------
 
 Time: Fri Aug 02 2024 12:54:34 GMT+0300 (שעון ישראל (קיץ))
-Message: Unknown column 'ul.is_liked' in 'field list'
-Stack: Error: Unknown column 'ul.is_liked' in 'field list'
+Message: Unknown column 'ul.is_saved' in 'field list'
+Stack: Error: Unknown column 'ul.is_saved' in 'field list'
     at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -1408,8 +1408,8 @@ Stack: Error: Unknown column 'ul.is_liked' in 'field list'
 ---------------------------------------
 
 Time: Fri Aug 02 2024 13:05:35 GMT+0300 (שעון ישראל (קיץ))
-Message: Unknown column 'ul.is_liked' in 'field list'
-Stack: Error: Unknown column 'ul.is_liked' in 'field list'
+Message: Unknown column 'ul.is_saved' in 'field list'
+Stack: Error: Unknown column 'ul.is_saved' in 'field list'
     at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -1685,8 +1685,8 @@ Stack: Error: Unknown column 'NaN' in 'where clause'
 ---------------------------------------
 
 Time: Sun Aug 04 2024 11:46:12 GMT+0300 (שעון ישראל (קיץ))
-Message: Unknown column 'isLiked' in 'field list'
-Stack: Error: Unknown column 'isLiked' in 'field list'
+Message: Unknown column 'isSaved' in 'field list'
+Stack: Error: Unknown column 'isSaved' in 'field list'
     at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich\backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -1939,8 +1939,8 @@ Stack: undefined
 ---------------------------------------
 
 Time: Tue Aug 06 2024 19:14:25 GMT+0300 (Israel Daylight Time)
-Message: Column 'isLiked' cannot be null
-Stack: Error: Column 'isLiked' cannot be null
+Message: Column 'isSaved' cannot be null
+Stack: Error: Column 'isSaved' cannot be null
     at Packet.asError (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\shlom\Desktop\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -4246,8 +4246,8 @@ Stack: undefined
 ---------------------------------------
 
 Time: Fri Sep 20 2024 22:18:12 GMT+0300 (Israel Daylight Time)
-Message: Incorrect integer value: 'true' for column 'isLiked' at row 1
-Stack: Error: Incorrect integer value: 'true' for column 'isLiked' at row 1
+Message: Incorrect integer value: 'true' for column 'isSaved' at row 1
+Stack: Error: Incorrect integer value: 'true' for column 'isSaved' at row 1
     at Packet.asError (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -4261,8 +4261,8 @@ Stack: Error: Incorrect integer value: 'true' for column 'isLiked' at row 1
 ---------------------------------------
 
 Time: Fri Sep 20 2024 22:20:23 GMT+0300 (Israel Daylight Time)
-Message: Incorrect integer value: 'false' for column 'isLiked' at row 1
-Stack: Error: Incorrect integer value: 'false' for column 'isLiked' at row 1
+Message: Incorrect integer value: 'false' for column 'isSaved' at row 1
+Stack: Error: Incorrect integer value: 'false' for column 'isSaved' at row 1
     at Packet.asError (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -4276,8 +4276,8 @@ Stack: Error: Incorrect integer value: 'false' for column 'isLiked' at row 1
 ---------------------------------------
 
 Time: Fri Sep 20 2024 22:21:57 GMT+0300 (Israel Daylight Time)
-Message: Incorrect integer value: 'true' for column 'isLiked' at row 1
-Stack: Error: Incorrect integer value: 'true' for column 'isLiked' at row 1
+Message: Incorrect integer value: 'true' for column 'isSaved' at row 1
+Stack: Error: Incorrect integer value: 'true' for column 'isSaved' at row 1
     at Packet.asError (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
     at Query.execute (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
     at PoolConnection.handlePacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:481:34)
@@ -7866,5 +7866,100 @@ Stack: undefined
 Time: Mon Sep 30 2024 15:42:27 GMT+0300 (שעון ישראל (קיץ))
 Message: email or password are incorrect
 Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:02:52 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:02:56 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:03:04 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:03:06 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:03:27 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:04:54 GMT+0300 (Israel Daylight Time)
+Message: Email is already in use.
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:05:05 GMT+0300 (Israel Daylight Time)
+Message: Email is already in use.
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:07:55 GMT+0300 (Israel Daylight Time)
+Message: Missing image.
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:08:01 GMT+0300 (Israel Daylight Time)
+Message: End date cant be before start date
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:16:09 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Mon Sep 30 2024 18:16:14 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Sat Oct 05 2024 23:02:31 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Sat Oct 05 2024 23:02:35 GMT+0300 (Israel Daylight Time)
+Message: email or password are incorrect
+Stack: undefined
+---------------------------------------
+
+Time: Sat Oct 05 2024 23:35:24 GMT+0300 (Israel Daylight Time)
+Message: Unknown column 'ul.isSaved' in 'field list'
+Stack: Error: Unknown column 'ul.isSaved' in 'field list'
+    at Packet.asError (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+---------------------------------------
+
+Time: Sat Oct 05 2024 23:37:41 GMT+0300 (Israel Daylight Time)
+Message: Unknown column 'isLiked' in 'field list'
+Stack: Error: Unknown column 'isLiked' in 'field list'
+    at Packet.asError (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\shlom\Documents\shlomtzion-mendlovich\Backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
 ---------------------------------------
 

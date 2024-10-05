@@ -5,7 +5,7 @@ export enum Role {
 
 export enum FilterState {
   All = "all",
-  Liked = "Liked",
+  Saved = "Saved",
   Future = "Future",
   Now = "Now",
 }

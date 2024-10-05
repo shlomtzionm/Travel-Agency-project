@@ -9,10 +9,9 @@ import { Role } from "../../../Models/enums";
 import { createReport } from "../../DataArea/Csv/Csv";
 import { VacationModel } from "../../../Models/vacationModel";
 
-
 export function Menu(): JSX.Element {
-  const user = useSelector<AppState, UserModel>((store) => store.user);
-  const vacations = useSelector<AppState, VacationModel[]>((store) => store.vacations);
+  const user = useSelector<AppState, UserModel>(store => store.user);
+  const vacations = useSelector<AppState, VacationModel[]>(store => store.vacations);
 
   function logout() {
     userService.logout();
@@ -24,7 +23,7 @@ export function Menu(): JSX.Element {
       {!user && (
         <>
           <span>Hello Guest</span>
-          <img src="icon.ico" className="Icon"/>
+          <img src="icon.ico" className="Icon" />
         </>
       )}
 
@@ -33,7 +32,7 @@ export function Menu(): JSX.Element {
           <span>
             Hello {user.firstName} {user.lastName}
           </span>
-          <img src="icon.ico" className="Icon"/>
+          <img src="icon.ico" className="Icon" />
           <div className="MenuButtons">
             {user.roleId === Role.Admin && (
               <>
@@ -43,7 +42,7 @@ export function Menu(): JSX.Element {
                 <NavLink className="NoneDecor" to="/list">
                   <em>List</em>
                 </NavLink>
-                <button className="TextBtn" onClick={()=>createReport(vacations)}>
+                <button className="TextBtn" onClick={() => createReport(vacations)}>
                   <em>Csv</em>
                 </button>
                 <NavLink className="NoneDecor" to="/chart">

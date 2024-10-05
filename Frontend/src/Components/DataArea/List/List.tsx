@@ -14,7 +14,6 @@ import { Role } from "../../../Models/enums";
 function List(): JSX.Element {
   const user = useSelector<AppState, UserModel>(store => store.user);
   const vacationsFromRedux = useSelector<AppState, VacationModel[]>(store => store.vacations);
-  const currentPage = useSelector<AppState, number>(store => store.currentPage);
 
   const [filteredVacations, setFilteredVacations] = useState<VacationModel[]>(vacationsFromRedux);
   const [vacations, setVacations] = useState<VacationModel[]>([]);
@@ -35,8 +34,8 @@ function List(): JSX.Element {
         {vacations.length === 0 && <p>there are no vacations</p>}
         {vacations.length > 0 && vacations.map(vacation => <VacationCard vacation={vacation} key={vacation.id} role={user.roleId} />)}
       </div>
-      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations}  />}
-      {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations}  />}
+      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations} />}
+      {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations} />}
     </div>
   );
 }

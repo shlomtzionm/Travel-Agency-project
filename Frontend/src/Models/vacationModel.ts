@@ -7,6 +7,6 @@ export class VacationModel {
   public price: number;
   public image: File;
   public imageUrl: string;
-  public isLiked: boolean;
+  public isSaved: boolean;
   public likesCount: number;
 }

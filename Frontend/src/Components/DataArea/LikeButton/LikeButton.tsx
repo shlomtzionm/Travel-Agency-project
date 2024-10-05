@@ -16,19 +16,19 @@ interface LikeButtonProps {
 export function LikeButton({ vacation }: LikeButtonProps): JSX.Element {
   const user = useSelector<AppState, UserModel>(store => store.user);
 
-  const [likeState, setLikeState] = useState<boolean>(vacation.isLiked);
+  const [likeState, setLikeState] = useState<boolean>(vacation.isSaved);
   const [likesCount, setLikesCount] = useState<number>(vacation.likesCount);
 
   useEffect(() => {
-    setLikeState(vacation.isLiked);
+    setLikeState(vacation.isSaved);
     setLikesCount(vacation.likesCount);
   }, [vacation]);
 
   async function handleClick(): Promise<void> {
     if (!vacation || !user) return;
     try {
-      const updatedVacation = await vacationServices.updateIsLiked(!likeState, user.id, vacation.id);
-      setLikeState(updatedVacation.isLiked);
+      const updatedVacation = await vacationServices.updateIsSaved(!likeState, user.id, vacation.id);
+      setLikeState(updatedVacation.isSaved);
       setLikesCount(updatedVacation.likesCount);
     } catch (error) {
       notify.error("Failed to update vacation");

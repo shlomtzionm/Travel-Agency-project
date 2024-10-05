@@ -4,18 +4,17 @@ import { useEffect } from "react";
 import { VacationModel } from "../../../Models/vacationModel";
 import { AppState, currentPageActions, store } from "../../../redux/store";
 import { useSelector } from "react-redux";
+import { moreServices } from "../../../Services/moreServices";
 
 type MyPaginationProps = {
   vacations: VacationModel[];
   setVacationsToDisplay: (vacations: VacationModel[]) => void;
-  // setCurrentPage: (number: number) => void;
-  // currentPage: number;
 };
 
 export function MyPagination(props: MyPaginationProps): JSX.Element {
   const ITEMS_PER_PAGE = 9;
 
-  const currentPage = useSelector<AppState, number>((store) => store.currentPage);
+  const currentPage = useSelector<AppState, number>(store => store.currentPage);
 
   useEffect(() => {
     const indexOfLastVacation = currentPage * ITEMS_PER_PAGE;
@@ -25,12 +24,12 @@ export function MyPagination(props: MyPaginationProps): JSX.Element {
   }, [currentPage, props.vacations]);
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, page: number): void => {
-  resetCurrentPage(page)
+    resetCurrentPage(page);
   };
 
   function resetCurrentPage(page: number): void {
-    const action = currentPageActions.updateCurrentPage(page);
-    store.dispatch(action);
+    moreServices.setCurrentPage(page)
+
   }
 
   return (

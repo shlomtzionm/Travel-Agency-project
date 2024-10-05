@@ -4,10 +4,10 @@ import { userService } from "../../../Services/userService";
 import { notify } from "../../../Utils/Notify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
-import "./Login.css"
+import "./Login.css";
 
 export function Login(): JSX.Element {
-  const { register, handleSubmit } = useForm<CredentialsModel>();
+  const { register, handleSubmit, formState: { errors } } = useForm<CredentialsModel>();
   const navigate = useNavigate();
 
   async function send(credentials: CredentialsModel): Promise<void> {
@@ -21,12 +21,20 @@ export function Login(): JSX.Element {
   }
 
   return (
-    <div >
+    <div>
       <form className="LoginForm" onSubmit={handleSubmit(send)}>
-        <TextField id="outlined-basic" label="Email:" variant="outlined" {...register("email")} />
-        <TextField type="password" id="outlined-basic" label="Password:" variant="outlined" {...register("password")} />
+        <TextField id="outlined-basic" label="Email:" variant="outlined"    {...register("email", { maxLength: 50, required: "Email is required" })}
+          error={!!errors.email}
+          helperText={errors.email?.message}
+        />
+        <TextField type="password" id="outlined-basic" label="Password:" variant="outlined"    {...register("password", { maxLength: 100, required: "Password is required" })}
+          error={!!errors.password}
+          helperText={errors.password?.message}
+       />
 
-        <Button type="submit" variant="contained">Login</Button>
+        <Button type="submit" variant="contained">
+          Login
+        </Button>
       </form>
       <NavLink to={"/register"}>
         <em className="link">dont have an account?</em>

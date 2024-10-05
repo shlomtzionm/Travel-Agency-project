@@ -194,7 +194,7 @@
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\"isLiked\":true}",
+                "raw": "{\"isSaved\":true}",
                 "form": []
             }
         },

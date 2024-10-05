@@ -1,5 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import { deleteVacation, initUser, initVacations, updateFilterState, logoutUser, updateIsLiked, updateVacation, updateCurrentPage } from "./reducers";
+import { deleteVacation, initUser, initVacations, updateFilterState, logoutUser, updateIsSaved, updateVacation, updateCurrentPage } from "./reducers";
 import { VacationModel } from "../Models/vacationModel";
 import { UserModel } from "../Models/userModel";
 import { FilterState } from "../Models/enums";
@@ -17,7 +17,7 @@ const initialUserState: UserModel | null = null;
 const vacationSlice = createSlice({
   name: "vacations", // Internal use
   initialState: initialVacationsState,
-  reducers: { initVacations, updateIsLiked, updateVacation, deleteVacation },
+  reducers: { initVacations, updateIsSaved, updateVacation, deleteVacation },
 });
 
 const filterStateSlice = createSlice({

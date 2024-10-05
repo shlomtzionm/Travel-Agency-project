@@ -55,7 +55,7 @@ UNLOCK TABLES;
 /*!50003 SET sql_mode              = 'IGNORE_SPACE,ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `add_new_vacation_to_likes` AFTER INSERT ON `vacations` FOR EACH ROW BEGIN
-    INSERT INTO likes (userId, vacationId, isLiked)
+    INSERT INTO likes (userId, vacationId, isSaved)
     SELECT u.id, NEW.id, 0
     FROM users u;
 END */;;

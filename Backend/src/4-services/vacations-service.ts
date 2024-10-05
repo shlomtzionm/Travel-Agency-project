@@ -14,13 +14,13 @@ class VacationsService {
     const sql = `
     SELECT 
       v.*, 
-      MAX(IF(ul.isLiked = 1, 1, 0)) AS isLiked, 
-      CAST(SUM(IF(l.isLiked = 1, 1, 0)) AS UNSIGNED) AS likesCount, 
+      MAX(IF(ul.isSaved = 1, 1, 0)) AS isSaved, 
+      CAST(SUM(IF(l.isSaved = 1, 1, 0)) AS UNSIGNED) AS likesCount, 
       CONCAT('http://localhost:4000/api/vacations/images/', v.image) AS imageUrl
     FROM 
       vacations v
     LEFT JOIN 
-      likes l ON v.id = l.vacationId AND l.isLiked = 1
+      likes l ON v.id = l.vacationId AND l.isSaved = 1
     LEFT JOIN 
       likes ul ON v.id = ul.vacationId AND ul.userId = ?
     GROUP BY 
@@ -40,13 +40,13 @@ class VacationsService {
     const sql = `
     SELECT 
       v.*, 
-      MAX(IF(ul.isLiked = 1, 1, 0)) AS isLiked, 
-      CAST(SUM(IF(l.isLiked = 1, 1, 0)) AS UNSIGNED) AS likesCount, 
+      MAX(IF(ul.isSaved = 1, 1, 0)) AS isSaved, 
+      CAST(SUM(IF(l.isSaved = 1, 1, 0)) AS UNSIGNED) AS likesCount, 
       CONCAT('http://localhost:4000/api/vacations/images/', v.image) AS imageUrl
     FROM 
       vacations v
     LEFT JOIN 
-      likes l ON v.id = l.vacationId AND l.isLiked = 1
+      likes l ON v.id = l.vacationId AND l.isSaved = 1
     LEFT JOIN 
       likes ul ON v.id = ul.vacationId AND ul.userId = ?
     WHERE 
@@ -79,9 +79,9 @@ class VacationsService {
     if (info.affectedRows === 0) throw new ResourceNotFoundError(id);
   }
 
-  public async updateIsLiked(isLiked: boolean, userId: number, vacationId: number): Promise<VacationModel> {
-    const sql = "update likes set isLiked = ? where userId = ? and vacationId = ?";
-    await dal.execute(sql, [isLiked, userId, vacationId]);
+  public async updateIsSaved(isSaved: boolean, userId: number, vacationId: number): Promise<VacationModel> {
+    const sql = "update likes set isSaved = ? where userId = ? and vacationId = ?";
+    await dal.execute(sql, [isSaved, userId, vacationId]);
     const updatedVacation: VacationModel = await this.getOneVacationById(userId, vacationId);
     return updatedVacation;
   }

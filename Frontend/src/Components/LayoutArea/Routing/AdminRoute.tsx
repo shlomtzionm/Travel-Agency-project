@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux"; 
-import { AppState } from "../../../redux/store"; 
+import { useSelector } from "react-redux";
+import { AppState } from "../../../redux/store";
 import { Role } from "../../../Models/enums";
 import { NotAuthorized } from "../NotAuthorizedPage/NotAuthorized";
 
