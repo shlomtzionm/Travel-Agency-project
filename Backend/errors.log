@@ -8038,3 +8038,149 @@ Stack: Error: Unknown column 'ul.isSaved' in 'field list'
     at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
 ---------------------------------------
 
+Time: Mon Nov 18 2024 12:32:21 GMT+0200 (שעון ישראל (חורף))
+Message: 
+Stack: AggregateError
+    at internalConnectMultiple (node:net:1114:18)
+    at afterConnectMultiple (node:net:1667:5)
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:32:21 GMT+0200 (שעון ישראל (חורף))
+Message: 
+Stack: AggregateError
+    at internalConnectMultiple (node:net:1114:18)
+    at afterConnectMultiple (node:net:1667:5)
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:32:57 GMT+0200 (שעון ישראל (חורף))
+Message: Unknown column 'isLiked' in 'field list'
+Stack: Error: Unknown column 'isLiked' in 'field list'
+    at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:518:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:34:55 GMT+0200 (שעון ישראל (חורף))
+Message: Unknown column 'ul.isSaved' in 'field list'
+Stack: Error: Unknown column 'ul.isSaved' in 'field list'
+    at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:518:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:35:54 GMT+0200 (שעון ישראל (חורף))
+Message: Unknown column 'ul.isSaved' in 'field list'
+Stack: Error: Unknown column 'ul.isSaved' in 'field list'
+    at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:518:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:36:09 GMT+0200 (שעון ישראל (חורף))
+Message: Unknown column 'ul.isSaved' in 'field list'
+Stack: Error: Unknown column 'ul.isSaved' in 'field list'
+    at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:518:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:37:40 GMT+0200 (שעון ישראל (חורף))
+Message: Missing image.
+Stack: undefined
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:37:53 GMT+0200 (שעון ישראל (חורף))
+Message: Start date must be in the future
+Stack: undefined
+---------------------------------------
+
+Time: Mon Nov 18 2024 12:37:58 GMT+0200 (שעון ישראל (חורף))
+Message: Unknown column 'isLiked' in 'field list'
+Stack: Error: Unknown column 'isLiked' in 'field list'
+    at Packet.asError (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packets\packet.js:728:17)
+    at Query.execute (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:481:34)
+    at PacketParser.onPacket (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:97:12)
+    at PacketParser.executeStart (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\mysql2\lib\connection.js:104:25)
+    at Socket.emit (node:events:518:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+---------------------------------------
+
+Time: Tue Nov 19 2024 15:51:21 GMT+0200 (שעון ישראל (חורף))
+Message: Network error.
+Stack: undefined
+---------------------------------------
+
+Time: Tue Nov 19 2024 15:52:57 GMT+0200 (שעון ישראל (חורף))
+Message: Network error.
+Stack: undefined
+---------------------------------------
+
+Time: Tue Nov 19 2024 16:04:39 GMT+0200 (שעון ישראל (חורף))
+Message: Network error.
+Stack: undefined
+---------------------------------------
+
+Time: Tue Nov 19 2024 16:05:55 GMT+0200 (שעון ישראל (חורף))
+Message: jwt.split is not a function
+Stack: TypeError: jwt.split is not a function
+    at OAuth2Client.verifySignedJwtWithCertsAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:653:30)
+    at OAuth2Client.verifyIdTokenAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:508:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+---------------------------------------
+
+Time: Tue Nov 19 2024 16:12:34 GMT+0200 (שעון ישראל (חורף))
+Message: jwt.split is not a function
+Stack: TypeError: jwt.split is not a function
+    at OAuth2Client.verifySignedJwtWithCertsAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:653:30)
+    at OAuth2Client.verifyIdTokenAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:508:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+---------------------------------------
+
+Time: Tue Nov 19 2024 16:13:55 GMT+0200 (שעון ישראל (חורף))
+Message: jwt.split is not a function
+Stack: TypeError: jwt.split is not a function
+    at OAuth2Client.verifySignedJwtWithCertsAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:653:30)
+    at OAuth2Client.verifyIdTokenAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:508:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+---------------------------------------
+
+Time: Tue Nov 19 2024 16:14:35 GMT+0200 (שעון ישראל (חורף))
+Message: jwt.split is not a function
+Stack: TypeError: jwt.split is not a function
+    at OAuth2Client.verifySignedJwtWithCertsAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:653:30)
+    at OAuth2Client.verifyIdTokenAsync (C:\Users\User\Desktop\shlomtzion\shlomtzion-mendlovich---Copy\backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:508:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+---------------------------------------
+

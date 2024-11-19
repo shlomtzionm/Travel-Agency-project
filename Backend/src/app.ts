@@ -8,6 +8,7 @@ import { errorsMiddleware } from "./6-middleware/errors-middleware";
 import { loggerMiddleware } from "./6-middleware/logger-middleware";
 import { vacationsController } from "./5-controllers/vacations-controller";
 import { userController } from "./5-controllers/user-controller";
+import { authController } from "./5-controllers/auth-controller";
 
 // Main application class:
 class App {
@@ -34,7 +35,7 @@ class App {
         this.server.use(loggerMiddleware.logToConsole);
 
         // Connect any controller route to the server:
-        this.server.use("/api",vacationsController.router, userController.router);
+        this.server.use("/api",vacationsController.router, userController.router, authController.router);
 
         // Route not found middleware: 
         this.server.use(errorsMiddleware.routeNotFound);

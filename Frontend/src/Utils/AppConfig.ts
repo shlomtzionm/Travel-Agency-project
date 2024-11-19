@@ -8,6 +8,7 @@ class AppConfig {
     public readonly likesUrl = "http://localhost:4000/api/like/";
     public readonly tokenUrl = "http://localhost:4000/api/validate-token/";
    public readonly imageUrl =  "http://localhost:4000/api/vacations/images/"
+   public readonly googleUrl =  "http://localhost:4000/api/auth/google/token/"
 
     //Axios options:
     public readonly axiosOptions = (token:string)=>({
