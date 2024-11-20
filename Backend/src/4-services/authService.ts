@@ -1,4 +1,6 @@
 import { OAuth2Client } from "google-auth-library"
+import { UserModel } from "../3-models/userModel"
+import { cyber } from "../2-utils/cyber"
 
 class AuthService{
 
@@ -15,7 +17,8 @@ const ticket = await this.client.verifyIdToken({
     audience:this.CLIENT_ID
 })
 const payload = ticket.getPayload()
-return payload
+const user = new UserModel({firstName:payload.given_name, lastName:payload.family_name,email:payload.email})
+return cyber.generateNewToken(user)
 }
 
 

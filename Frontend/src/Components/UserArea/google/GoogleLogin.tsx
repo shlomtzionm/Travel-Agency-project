@@ -14,14 +14,10 @@ const LoginGoogle: React.FC = () => {
   const onSuccess = async (cred: CredentialResponse) => {
     try {
         if(cred.credential){
-            console.log(cred);
-            
-            const credential = cred.credential
-            const res =    await authService.login(credential);
-            const {user , token} = res.data
-      
-            
-            localStorage.setItem('auth_token', token);
+          console.log(cred.credential);
+          
+            await authService.login(cred.credential);
+  
             navigate("/list");
         } else{
             console.log("Credential missing from response.");

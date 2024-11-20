@@ -32,13 +32,13 @@ export function deleteVacation(currentState: VacationModel[], action: PayloadAct
   return currentState.filter(v => v.id !== action.payload);
 }
 
-export function initUser(currentState: UserModel, action: PayloadAction<UserModel>): UserModel {
-  const newState: UserModel = action.payload;
+export function initUser(currentState:Partial< UserModel>, action: PayloadAction<Partial<UserModel>>):Partial< UserModel> {
+  const newState:Partial< UserModel> = action.payload;
   return newState;
 }
 
-export function logoutUser(currentState: UserModel, action: Action): UserModel {
-  const newState: UserModel = null;
+export function logoutUser(currentState:Partial< UserModel>, action: Action):Partial< UserModel> {
+  const newState:Partial< UserModel> = null;
   return newState;
 }
 

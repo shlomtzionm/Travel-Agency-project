@@ -10,7 +10,7 @@ import { createReport } from "../../DataArea/Csv/Csv";
 import { VacationModel } from "../../../Models/vacationModel";
 
 export function Menu(): JSX.Element {
-  const user = useSelector<AppState, UserModel>(store => store.user);
+  const user = useSelector<AppState, Partial<UserModel>>(store => store.user);
   const vacations = useSelector<AppState, VacationModel[]>(store => store.vacations);
 
   function logout() {

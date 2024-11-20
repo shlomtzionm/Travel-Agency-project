@@ -18,8 +18,8 @@ class AuthController{
     if(!id_token){
      response.status(400).json({ message: 'id_token is required' })
     }
-    const userData = await authService.login(id_token)
-    response.status(200).json({ message: 'User authenticated', user: userData });  
+    const jwtToken = await authService.login(id_token)
+    response.status(200).json( jwtToken );  
   } catch (error:any) {
     next(error)
   }

@@ -6,13 +6,13 @@ import { FilterState } from "../Models/enums";
 
 export type AppState = {
   vacations: VacationModel[];
-  user: UserModel | null;
+  user: Partial<UserModel> | null;
   filterState: FilterState;
   currentPage: number;
 };
 
 const initialVacationsState: VacationModel[] = [];
-const initialUserState: UserModel | null = null;
+const initialUserState: Partial<UserModel> | null = null;
 
 const vacationSlice = createSlice({
   name: "vacations", // Internal use
