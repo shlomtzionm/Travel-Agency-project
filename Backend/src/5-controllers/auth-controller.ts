@@ -1,5 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import { authService } from "../4-services/authService";
+import { UserModel } from "../3-models/userModel";
+import { StatusCode } from "../3-models/enums";
 
 class AuthController{
     public readonly router = express.Router();
@@ -10,6 +12,17 @@ class AuthController{
   
     private registerRoutes(): void {
       this.router.post("/auth/google/token",  this.login);
+      this.router.post("/auth/google/token/register",  this.register);
+  }
+
+  private async register(request: Request, response: Response, next: NextFunction){
+    try {
+      const {idToken } = request.body
+const token = await authService.register(idToken)
+response.status(StatusCode.Created).json(token)
+    } catch (error:any) {
+      next(error)
+    }
   }
   
     private async login(request: Request, response: Response, next: NextFunction): Promise<void> {

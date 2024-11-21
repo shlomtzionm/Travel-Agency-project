@@ -14,6 +14,7 @@ class AppConfig {
     public readonly jwtSecretKey = process.env.JWT_SECRET_KEY;
     public readonly passwordSalt = process.env.PASSWORD_SALT;
     public readonly baseImageUrl = process.env.BASE_IMAGE_URL;
+    public readonly CLIENT_ID = "736266445281-90bbb6epujrk5gk6jjdggmd1up75dntd.apps.googleusercontent.com"
 }
 
 export const appConfig = new AppConfig();

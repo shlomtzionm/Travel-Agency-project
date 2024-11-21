@@ -9,6 +9,7 @@ import { loggerMiddleware } from "./6-middleware/logger-middleware";
 import { vacationsController } from "./5-controllers/vacations-controller";
 import { userController } from "./5-controllers/user-controller";
 import { authController } from "./5-controllers/auth-controller";
+import { OAuth2Client } from "google-auth-library";
 
 // Main application class:
 class App {
@@ -18,7 +19,7 @@ class App {
 
     // Start app:
     public start(): void {
-
+       
         // Enable CORS requests:
         this.server.use(cors()); // Enable CORS for any frontend website.
 
@@ -47,6 +48,6 @@ class App {
     }
 
 }
-
+export const client = new OAuth2Client(appConfig.CLIENT_ID)
 export const app = new App();
 app.start();
