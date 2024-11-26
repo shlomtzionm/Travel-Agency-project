@@ -29,12 +29,12 @@ class UserService {
     });
   }
 
-  public async register(user: UserModel): Promise<void> {
+  public async register(user:Partial< UserModel>): Promise<void> {
     const response = await axios.post<string>(appConfig.registerUrl, user);
     const token: string = response.data;
     localStorage.setItem("token", token);
-    const container = jwtDecode<{ user: UserModel }>(token);
-    const dbUser: UserModel = container.user;
+    const container = jwtDecode<{ user:Partial< UserModel >}>(token);
+    const dbUser:Partial< UserModel> = container.user;
     const action = userActions.initUser(dbUser);
     store.dispatch(action);
     const resetPageAction = currentPageActions.updateCurrentPage(1);

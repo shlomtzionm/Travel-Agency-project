@@ -26,7 +26,7 @@ type UpdateDialogProps = {
 };
 
 export function UpdateDialog(props: UpdateDialogProps): JSX.Element {
-  const user = useSelector<AppState, UserModel>(store => store.user);
+  const user = useSelector<AppState,Partial< UserModel>>(store => store.user);
   const vacation = useSelector<AppState, VacationModel>(store => store.vacations.find(v => v.id === props.vacation.id));
 
   const [openDialog, setOpenDialog] = useState(false);

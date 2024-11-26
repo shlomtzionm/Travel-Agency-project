@@ -4,6 +4,7 @@ import jwt, { SignOptions } from "jsonwebtoken";
 import { Role } from "../3-models/enums";
 import { UserModel } from "../3-models/userModel";
 
+
 class Cyber {
   public hash(plainText: string): string {
     return crypto
@@ -40,6 +41,16 @@ return user.roleId === Role.Admin
 return false
     }
   }
+
+  // public async verifyGoogleToken(idToken:string){
+  // try {
+  //   const ticket 
+  // } catch (error:any) {
+  //   return false
+  // }
+  // }
 }
+
+
 
 export const cyber = new Cyber();

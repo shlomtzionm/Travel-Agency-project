@@ -14,7 +14,7 @@ interface LikeButtonProps {
 }
 
 export function LikeButton({ vacation }: LikeButtonProps): JSX.Element {
-  const user = useSelector<AppState, UserModel>(store => store.user);
+  const user = useSelector<AppState,Partial< UserModel>>(store => store.user);
 
   const [favoritestate, setFavoritestate] = useState<boolean>(vacation.isFavorite);
   const [favoritesCount, setFavoritesCount] = useState<number>(vacation.favoritesCount);

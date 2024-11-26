@@ -12,7 +12,7 @@ import { MyPagination } from "../Pagination/Pagination";
 import { Role } from "../../../Models/enums";
 
 function List(): JSX.Element {
-  const user = useSelector<AppState, UserModel>(store => store.user);
+  const user = useSelector<AppState,Partial< UserModel>>(store => store.user);
   const vacationsFromRedux = useSelector<AppState, VacationModel[]>(store => store.vacations);
 
   const [filteredVacations, setFilteredVacations] = useState<VacationModel[]>(vacationsFromRedux);
