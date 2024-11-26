@@ -31,14 +31,14 @@ function Filter(props: FilterProps): JSX.Element {
       case FilterState.All:
         filteredVacations = vacationsFromRedux;
         break;
-      case FilterState.Saved:
+      case FilterState.Favorites:
         filteredVacations = moreServices.filterByIsLike(vacationsFromRedux);
         break;
-      case FilterState.Future:
-        filteredVacations = moreServices.filterByFuture(vacationsFromRedux);
+      case FilterState.Upcoming:
+        filteredVacations = moreServices.filterByUpcoming(vacationsFromRedux);
         break;
-      case FilterState.Now:
-        filteredVacations = moreServices.filterByNow(vacationsFromRedux);
+      case FilterState.Current:
+        filteredVacations = moreServices.filterByCurrent(vacationsFromRedux);
         break;
       default:
         filteredVacations = vacationsFromRedux;
@@ -68,10 +68,10 @@ function Filter(props: FilterProps): JSX.Element {
             resetCurrentPage();
           }}
         >
-          <MenuItem value={FilterState.All}>All</MenuItem>
-          <MenuItem value={FilterState.Saved}>Saved</MenuItem>
-          <MenuItem value={FilterState.Future}>Future</MenuItem>
-          <MenuItem value={FilterState.Now}>Now</MenuItem>
+          <MenuItem value={FilterState.All}>{FilterState.All}</MenuItem>
+          <MenuItem value={FilterState.Favorites}>{FilterState.Favorites}</MenuItem>
+          <MenuItem value={FilterState.Upcoming}>{FilterState.Upcoming}</MenuItem>
+          <MenuItem value={FilterState.Current}>{FilterState.Current}</MenuItem>
         </Select>
       </FormControl>
     </div>

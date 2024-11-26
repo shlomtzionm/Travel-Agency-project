@@ -16,20 +16,20 @@ interface LikeButtonProps {
 export function LikeButton({ vacation }: LikeButtonProps): JSX.Element {
   const user = useSelector<AppState, UserModel>(store => store.user);
 
-  const [likeState, setLikeState] = useState<boolean>(vacation.isSaved);
-  const [likesCount, setLikesCount] = useState<number>(vacation.likesCount);
+  const [favoritestate, setFavoritestate] = useState<boolean>(vacation.isFavorite);
+  const [favoritesCount, setFavoritesCount] = useState<number>(vacation.favoritesCount);
 
   useEffect(() => {
-    setLikeState(vacation.isSaved);
-    setLikesCount(vacation.likesCount);
+    setFavoritestate(vacation.isFavorite);
+    setFavoritesCount(vacation.favoritesCount);
   }, [vacation]);
 
   async function handleClick(): Promise<void> {
     if (!vacation || !user) return;
     try {
-      const updatedVacation = await vacationServices.updateIsSaved(!likeState, user.id, vacation.id);
-      setLikeState(updatedVacation.isSaved);
-      setLikesCount(updatedVacation.likesCount);
+      const updatedVacation = await vacationServices.updateIsFavorite(!favoritestate, user.id, vacation.id);
+      setFavoritestate(updatedVacation.isFavorite);
+      setFavoritesCount(updatedVacation.favoritesCount);
     } catch (error) {
       notify.error("Failed to update vacation");
     }
@@ -37,9 +37,9 @@ export function LikeButton({ vacation }: LikeButtonProps): JSX.Element {
 
   return (
     <div className="MyLikeButton">
-      <span>{likesCount}</span>
+      <span>{favoritesCount}</span>
       <IconButton onClick={handleClick}>
-        <FavoriteSharpIcon sx={{ color: likeState ? "red" : "gray" }} />
+        <FavoriteSharpIcon sx={{ color: favoritestate ? "red" : "gray" }} />
       </IconButton>
     </div>
   );

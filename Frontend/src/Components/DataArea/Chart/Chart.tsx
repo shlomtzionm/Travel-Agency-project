@@ -22,13 +22,13 @@ const Chart = () => {
       interval: 1,
     },
     title: {
-      text: "Likes Count",
+      text: "Favorites Count",
     },
     data: [
       {
         color: "#007bff",
         type: "column",
-        dataPoints: vacations.map(v => ({ label: v.location, y: v.likesCount })),
+        dataPoints: vacations.map(v => ({ label: v.location, y: v.favoritesCount })),
       },
     ],
   };

@@ -3,14 +3,14 @@ import { currentPageActions, store } from "../redux/store";
 
 class MoreServices {
   public filterByIsLike(vacations: VacationModel[]): VacationModel[] {
-    return vacations.filter((v) => v.isSaved);
+    return vacations.filter((v) => v.isFavorite);
   }
 
-  public filterByFuture(vacations: VacationModel[]): VacationModel[] {
+  public filterByUpcoming(vacations: VacationModel[]): VacationModel[] {
     return vacations.filter((v) => new Date(v.startDate) > new Date());
   }
 
-  public filterByNow(vacations: VacationModel[]): VacationModel[] {
+  public filterByCurrent(vacations: VacationModel[]): VacationModel[] {
     return vacations.filter((v) => new Date(v.startDate) < new Date() && new Date(v.endDate) > new Date());
   }
 

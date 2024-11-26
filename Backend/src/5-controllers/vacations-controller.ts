@@ -16,7 +16,7 @@ class VacationsController {
     this.router.get("/vacations-by-user/:userId", securityMiddleware.verifyLoggedIn, this.getAllVacations);
     this.router.get("/vacations-by-user/:userId/:vacationId", securityMiddleware.verifyLoggedIn, this.getOneVacationById);
     this.router.post("/vacations", securityMiddleware.verifyLoggedIn, securityMiddleware.verifyAdmin, this.addVacation);
-    this.router.put("/like/:userId/:vacationId", securityMiddleware.verifyLoggedIn, this.updateIsSaved);
+    this.router.put("/like/:userId/:vacationId", securityMiddleware.verifyLoggedIn, this.updateIsFavorite);
     this.router.patch("/vacations/:vacationId/:userId", securityMiddleware.verifyLoggedIn, securityMiddleware.verifyAdmin, this.updateVacation);
     this.router.get("/vacations/images/:imageName", this.getProductImage);
     this.router.delete("/vacations/:id", securityMiddleware.verifyLoggedIn, securityMiddleware.verifyAdmin, this.deleteVacation);
@@ -74,12 +74,12 @@ class VacationsController {
       next(err);
     }
   }
-  private async updateIsSaved(request: Request, response: Response, next: NextFunction) {
+  private async updateIsFavorite(request: Request, response: Response, next: NextFunction) {
     try {
       const userId = +request.params.userId;
       const vacationId = +request.params.vacationId;
-      const isSaved = request.body.isSaved;
-      const updatedVacation = await vacationsService.updateIsSaved(isSaved, userId, vacationId);
+      const isFavorite = request.body.isFavorite;
+      const updatedVacation = await vacationsService.updateIsFavorite(isFavorite, userId, vacationId);
       response.status(StatusCode.OK).send(updatedVacation);
     } catch (error: any) {
       next(error);

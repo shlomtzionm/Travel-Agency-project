@@ -185,7 +185,7 @@
             "_id": "99e7d392-2ae7-48ca-869d-48788fe64922",
             "colId": "284a8819-fe3d-4300-800a-ee6a3029f699",
             "containerId": "",
-            "name": "updateLikeState",
+            "name": "updateFavoritestate",
             "url": "http://localhost:4000/api/like/15/6",
             "method": "POST",
             "sortNum": 35000,
@@ -194,7 +194,7 @@
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\"isSaved\":true}",
+                "raw": "{\"isFavorite\":true}",
                 "form": []
             }
         },

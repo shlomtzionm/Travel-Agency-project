@@ -6,7 +6,7 @@ let report: [string, number | string][] = [["Location", "Amount"]];
 
 export function createReport(vacations: VacationModel[]) {
   vacations.forEach(v => {
-    const newRow: [string, number] = [v.location, v.likesCount];
+    const newRow: [string, number] = [v.location, v.favoritesCount];
     report.push(newRow);
   });
 

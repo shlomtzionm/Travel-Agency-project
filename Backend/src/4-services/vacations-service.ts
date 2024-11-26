@@ -14,15 +14,15 @@ class VacationsService {
     const sql = `
     SELECT 
       v.*, 
-      MAX(IF(ul.isSaved = 1, 1, 0)) AS isSaved, 
-      CAST(SUM(IF(l.isSaved = 1, 1, 0)) AS UNSIGNED) AS likesCount, 
+      MAX(IF(ul.isFavorite = 1, 1, 0)) AS isFavorite, 
+      CAST(SUM(IF(l.isFavorite = 1, 1, 0)) AS UNSIGNED) AS favoritesCount, 
       CONCAT('http://localhost:4000/api/vacations/images/', v.image) AS imageUrl
     FROM 
       vacations v
     LEFT JOIN 
-      likes l ON v.id = l.vacationId AND l.isSaved = 1
+      favorites l ON v.id = l.vacationId AND l.isFavorite = 1
     LEFT JOIN 
-      likes ul ON v.id = ul.vacationId AND ul.userId = ?
+      favorites ul ON v.id = ul.vacationId AND ul.userId = ?
     GROUP BY 
       v.id
     ORDER BY 
@@ -40,15 +40,15 @@ class VacationsService {
     const sql = `
     SELECT 
       v.*, 
-      MAX(IF(ul.isSaved = 1, 1, 0)) AS isSaved, 
-      CAST(SUM(IF(l.isSaved = 1, 1, 0)) AS UNSIGNED) AS likesCount, 
+      MAX(IF(ul.isFavorite = 1, 1, 0)) AS isFavorite, 
+      CAST(SUM(IF(l.isFavorite = 1, 1, 0)) AS UNSIGNED) AS favoritesCount, 
       CONCAT('http://localhost:4000/api/vacations/images/', v.image) AS imageUrl
     FROM 
       vacations v
     LEFT JOIN 
-      likes l ON v.id = l.vacationId AND l.isSaved = 1
+      favorites l ON v.id = l.vacationId AND l.isFavorite = 1
     LEFT JOIN 
-      likes ul ON v.id = ul.vacationId AND ul.userId = ?
+      favorites ul ON v.id = ul.vacationId AND ul.userId = ?
     WHERE 
       v.id = ?`;
   
@@ -79,9 +79,9 @@ class VacationsService {
     if (info.affectedRows === 0) throw new ResourceNotFoundError(id);
   }
 
-  public async updateIsSaved(isSaved: boolean, userId: number, vacationId: number): Promise<VacationModel> {
-    const sql = "update likes set isSaved = ? where userId = ? and vacationId = ?";
-    await dal.execute(sql, [isSaved, userId, vacationId]);
+  public async updateIsFavorite(isFavorite: boolean, userId: number, vacationId: number): Promise<VacationModel> {
+    const sql = "update favorites set isFavorite = ? where userId = ? and vacationId = ?";
+    await dal.execute(sql, [isFavorite, userId, vacationId]);
     const updatedVacation: VacationModel = await this.getOneVacationById(userId, vacationId);
     return updatedVacation;
   }

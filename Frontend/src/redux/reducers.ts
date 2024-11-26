@@ -20,8 +20,8 @@ export function addVacation(currentState: VacationModel[], action: PayloadAction
   return newState;
 }
 
-export function updateIsSaved(currentState: VacationModel[], action: PayloadAction<VacationModel>): VacationModel[] {
-  return currentState.map(v => (v.id === action.payload.id ? { ...v, isSaved: action.payload.isSaved, likesCount: action.payload.isSaved ? v.likesCount + 1 : v.likesCount - 1 } : v));
+export function updateIsFavorite(currentState: VacationModel[], action: PayloadAction<VacationModel>): VacationModel[] {
+  return currentState.map(v => (v.id === action.payload.id ? { ...v, isFavorite: action.payload.isFavorite, favoritesCount: action.payload.isFavorite ? v.favoritesCount + 1 : v.favoritesCount - 1 } : v));
 }
 
 export function updateVacation(currentState: VacationModel[], action: PayloadAction<VacationModel>): VacationModel[] {

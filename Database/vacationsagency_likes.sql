@@ -18,33 +18,33 @@ USE `vacationsagency`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `likes`
+-- Table structure for table `favorites`
 --
 
-DROP TABLE IF EXISTS `likes`;
+DROP TABLE IF EXISTS `favorites`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `likes` (
+CREATE TABLE `favorites` (
   `id` int NOT NULL AUTO_INCREMENT,
   `userId` int NOT NULL,
   `vacationId` int NOT NULL,
-  `isSaved` tinyint(1) NOT NULL,
+  `isFavorite` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   KEY `vacationId` (`vacationId`),
-  CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`id`) ON DELETE CASCADE,
   CONSTRAINT `userId` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=445 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `likes`
+-- Dumping data for table `favorites`
 --
 
-LOCK TABLES `likes` WRITE;
-/*!40000 ALTER TABLE `likes` DISABLE KEYS */;
-INSERT INTO `likes` VALUES (394,17,28,1),(395,16,28,0),(397,17,29,0),(398,16,29,0),(400,17,30,0),(401,16,30,0),(403,17,31,1),(404,16,31,0),(406,17,32,0),(407,16,32,0),(409,17,33,0),(410,16,33,0),(412,17,34,1),(413,16,34,0),(415,17,35,0),(416,16,35,0),(418,17,36,0),(419,16,36,0),(421,17,37,0),(422,16,37,0),(424,17,38,0),(425,16,38,0),(427,17,39,0),(428,16,39,0),(430,18,28,0),(431,18,29,0),(432,18,30,0),(433,18,31,0),(434,18,32,0),(435,18,33,0),(436,18,34,0),(437,18,35,0),(438,18,36,0),(439,18,37,0),(440,18,38,0),(441,18,39,0);
-/*!40000 ALTER TABLE `likes` ENABLE KEYS */;
+LOCK TABLES `favorites` WRITE;
+/*!40000 ALTER TABLE `favorites` DISABLE KEYS */;
+INSERT INTO `favorites` VALUES (394,17,28,1),(395,16,28,0),(397,17,29,0),(398,16,29,0),(400,17,30,0),(401,16,30,0),(403,17,31,1),(404,16,31,0),(406,17,32,0),(407,16,32,0),(409,17,33,0),(410,16,33,0),(412,17,34,1),(413,16,34,0),(415,17,35,0),(416,16,35,0),(418,17,36,0),(419,16,36,0),(421,17,37,0),(422,16,37,0),(424,17,38,0),(425,16,38,0),(427,17,39,0),(428,16,39,0),(430,18,28,0),(431,18,29,0),(432,18,30,0),(433,18,31,0),(434,18,32,0),(435,18,33,0),(436,18,34,0),(437,18,35,0),(438,18,36,0),(439,18,37,0),(440,18,38,0),(441,18,39,0);
+/*!40000 ALTER TABLE `favorites` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

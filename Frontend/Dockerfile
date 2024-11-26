@@ -4,10 +4,9 @@ WORKDIR /app
 
 COPY package.json /app
 
-RUN npm i
+RUN npm i 
 
 COPY . /app
 
 ENTRYPOINT npm start
-
 

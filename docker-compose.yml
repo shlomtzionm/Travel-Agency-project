@@ -1,0 +1,79 @@
+services:
+
+  
+  database-service:
+
+    image: shlomtzion2608/vacation-agency-db-image
+
+    build: ./Database
+
+    container_name: vacation-agency-db-container
+
+    restart: unless-stopped
+  
+    volumes:
+      - db-volume:/var/lib/mysql
+
+    environment:
+       MYSQL_HOST : localhost
+       MYSQL_USER : root
+       MYSQL_PASSWORD: root
+       MYSQL_DATABASE: travelAgency
+       MYSQL_ROOT_PASSWORD: root
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  
+  
+  backend-service:
+
+    depends_on:
+      database-service:
+        condition: service_healthy
+
+
+    image: shlomtzion2608/travel-agency-backend-image:1.0
+
+    build: ./Backend
+
+    container_name: "travel-agency-backend-container" 
+    
+    ports:
+      - 4000:4000
+ 
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_HOST : database-service
+      MYSQL_USER : root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: travelAgency
+
+  
+  frontend-service:
+    
+    depends_on:
+      - backend-service
+
+    image: shlomtzion2608/travel-agency-frontend-image:1.0
+
+    build: ./Frontend
+
+    container_name: travel-agency-frontend-container
+
+    ports:
+      - 3000:3000
+
+    restart: unless-stopped
+
+
+
+volumes:
+  db-volume:
+      
+    

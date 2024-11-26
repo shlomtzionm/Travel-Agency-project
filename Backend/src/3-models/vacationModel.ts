@@ -9,7 +9,7 @@ public  startDate: Date;
 public  endDate: Date;
 public  price: number;
 public  image?: UploadedFile;
-public isSaved : boolean
+public isFavorite : boolean
 
 
 public constructor(vacation:Partial<VacationModel>){
@@ -20,7 +20,7 @@ public constructor(vacation:Partial<VacationModel>){
   this.endDate= vacation.endDate ;
   this.price = vacation.price;
   this.image = vacation.image;
-  this.isSaved = vacation.isSaved;
+  this.isFavorite = vacation.isFavorite;
 
 }
 
