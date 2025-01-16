@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response } from "express";
-import { authService } from "../4-services/authService";
 import { UserModel } from "../3-models/userModel";
 import { StatusCode } from "../3-models/enums";
+import { googleService } from "../4-services/googleService";
 
-class AuthController{
+class GoogleController{
     public readonly router = express.Router();
 
     public constructor() {
@@ -18,7 +18,7 @@ class AuthController{
   private async register(request: Request, response: Response, next: NextFunction){
     try {
       const {idToken } = request.body
-const token = await authService.register(idToken)
+const token = await googleService.register(idToken)
 response.status(StatusCode.Created).json(token)
     } catch (error:any) {
       next(error)
@@ -31,7 +31,7 @@ response.status(StatusCode.Created).json(token)
     if(!id_token){
      response.status(400).json({ message: 'id_token is required' })
     }
-    const jwtToken = await authService.login(id_token)
+    const jwtToken = await googleService.login(id_token)
     response.status(200).json( jwtToken );  
   } catch (error:any) {
     next(error)
@@ -39,4 +39,4 @@ response.status(StatusCode.Created).json(token)
     }
 }
 
-export const authController = new AuthController()
+export const googleController = new GoogleController()

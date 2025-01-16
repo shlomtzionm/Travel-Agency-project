@@ -4,7 +4,7 @@ import { notify } from "../../../Utils/Notify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserModel } from "../../../Models/userModel";
 import { Button, TextField } from "@mui/material";
-import RegisterGoogle from "../google/GoogleRegister";
+// import RegisterGoogle from "../google/GoogleRegister";
 
 export function Register(): JSX.Element {
   const {
@@ -58,7 +58,7 @@ export function Register(): JSX.Element {
       <NavLink to={"/login"}>
         <em>have an account?</em>
       </NavLink>
-      <RegisterGoogle/>
+      
     </div>
   );
 }

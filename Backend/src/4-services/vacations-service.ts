@@ -3,7 +3,6 @@ import { dal } from "../2-utils/dal";
 import { ResourceNotFoundError } from "../3-models/client-errors";
 import { VacationModel } from "../3-models/vacationModel";
 import { fileSaver } from "uploaded-file-saver";
-import { error } from "console";
 import { userServices } from "./userServices";
 
 class VacationsService {

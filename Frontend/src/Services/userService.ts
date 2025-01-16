@@ -1,9 +1,10 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { UserModel } from "../Models/userModel";
-import { currentPageActions, store, userActions } from "../redux/store";
+import { currentPageActions, filterStateActions, store, userActions } from "../redux/store";
 import { appConfig } from "../Utils/AppConfig";
 import { CredentialsModel } from "../Models/CredentialsModel";
+import { FilterState } from "../Models/enums";
 
 class UserService {
   public constructor() {
@@ -57,6 +58,8 @@ class UserService {
     localStorage.removeItem("token");
     const action = userActions.logoutUser();
     store.dispatch(action);
+    store.dispatch(filterStateActions.updateFilterState(FilterState.All))
+    store.dispatch(currentPageActions.updateCurrentPage(1))
   }
 
   public async isTokenValid(): Promise<boolean> {

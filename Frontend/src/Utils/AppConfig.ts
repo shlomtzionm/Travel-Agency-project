@@ -9,7 +9,7 @@ class AppConfig {
     public readonly tokenUrl = "http://localhost:4000/api/validate-token/";
    public readonly imageUrl =  "http://localhost:4000/api/vacations/images/"
    public readonly googleUrl =  "http://localhost:4000/api/auth/google/token/";
-   public readonly CLIENT_ID = "736266445281-90bbb6epujrk5gk6jjdggmd1up75dntd.apps.googleusercontent.com"
+   public readonly CLIENT_ID = "736266445281-nc65m5r59p3uq821478ivh01m4m6gm9s.apps.googleusercontent.com"
 
     //Axios options:
     public readonly axiosOptions = (token:string)=>({

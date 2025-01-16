@@ -1,22 +1,19 @@
 import { OAuth2Client } from "google-auth-library";
 import { UserModel } from "../3-models/userModel";
 import { cyber } from "../2-utils/cyber";
-import { use } from "chai";
 import { Role } from "../3-models/enums";
 import { dal } from "../2-utils/dal";
 import { ValidationError } from "../3-models/client-errors";
 import { OkPacketParams } from "mysql2";
 import { appConfig } from "../2-utils/app-config";
 
-class AuthService {
-  public constructor(
-  public client = new OAuth2Client(appConfig.CLIENT_ID)
-
-  ){
-
+class GoogleService {
+  public constructor(){
+    this.client = new OAuth2Client(appConfig.CLIENT_ID)
   }
+public client  
 
-  public async login(id_token: string) {
+public async login(id_token: string) {
     const ticket = await this.client.verifyIdToken({
       idToken: id_token,
       audience: appConfig.CLIENT_ID,
@@ -60,4 +57,4 @@ class AuthService {
   }
 }
 
-export const authService = new AuthService();
+export const googleService = new GoogleService();

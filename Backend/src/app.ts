@@ -8,7 +8,7 @@ import { errorsMiddleware } from "./6-middleware/errors-middleware";
 import { loggerMiddleware } from "./6-middleware/logger-middleware";
 import { vacationsController } from "./5-controllers/vacations-controller";
 import { userController } from "./5-controllers/user-controller";
-import { authController } from "./5-controllers/auth-controller";
+import { authController } from "./5-controllers/google-controller";
 import { OAuth2Client } from "google-auth-library";
 
 // Main application class:

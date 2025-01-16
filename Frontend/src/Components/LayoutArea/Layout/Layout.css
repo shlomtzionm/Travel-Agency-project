@@ -4,5 +4,5 @@
   display: grid;
   grid-template-rows: 8% 79% 17%; /* Four rows with specific heights */
   overflow-y: hidden;
-  background-color: #fffafa;
+  background-color: #ffffff;
 }
