@@ -1,37 +1,48 @@
 .List {
-  display: flex;
-  flex-direction: column;
+  position: absolute;
   align-items: center;
-  width: 100%;
-  overflow-y: hidden;
-  height: 88vh;
+  width: 100vw;
+  height: 80vh;
   justify-content: space-around;
-  position: relative; /* Allows positioning of the overlay */
-  padding-top: 15px;
-  padding-bottom: 16px;
+  position: relative;
+  padding-bottom: 40px;
   z-index: 0;
+  overflow-x: hidden;
 }
 
-.List::before {
-  content: "";
-  position: absolute; /* Positioned over the background */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.List .actions {
+  z-index: 10000;
+  position: fixed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  background-color: rgba(252, 245, 245, 0.758);
+  width: 200px;
+  height: 100px;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+border-radius: 30px;
+}
+
+
+.List .actions:hover {
+  background-color:rgb(252, 245, 245) ;
 }
 
 .CardsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 65%;
-  overflow-y: auto; /* Allows scrolling for overflow content */
-  height: 100%;
-  margin: 8px auto;
+  width: 100vw;
+  height: 90vh;
+  justify-content: center;
+  gap: 0px;
 }
 
-.CardsContainer::-webkit-scrollbar {
-  width: 0; /* Hides the scrollbar */
-  background: transparent; /* Ensures no background is visible */
-}

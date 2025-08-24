@@ -61,7 +61,7 @@ function Filter(props: FilterProps): JSX.Element {
     <div className="Filter">
       <FormControl fullWidth>
         <InputLabel>Filter</InputLabel>
-        <Select
+        <Select className="muiSelect"
           label="Filter"
           onChange={(event: SelectChangeEvent<FilterState>) => {
             handleClick(event);

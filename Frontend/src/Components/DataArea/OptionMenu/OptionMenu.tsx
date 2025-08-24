@@ -6,6 +6,7 @@ import { useState } from "react";
 import { UpdateDialog } from "../UpdateDialog/UpdateDialog";
 import { VacationModel } from "../../../Models/vacationModel";
 import Delete from "../Delete/Delete";
+import "../OptionMenu/optionMenu.css";
 
 type OptionMenuProps = {
   vacation: VacationModel;
@@ -28,7 +29,15 @@ export default function OptionMenu(props: OptionMenuProps) {
 
   return (
     <div className="OptionMenu">
-      <IconButton aria-label="more" id="long-button" aria-controls={open ? "long-menu" : undefined} aria-expanded={open ? "true" : undefined} aria-haspopup="true" onClick={handleOpenMenu}>
+      <IconButton
+        aria-label="more"
+        id="long-button"
+        onClick={handleOpenMenu}
+        sx={{
+          color: "white", // icon color
+          borderRadius: "8px", // shape
+        }}
+      >
         <MoreHorizIcon />
       </IconButton>
       <Menu
@@ -38,7 +47,8 @@ export default function OptionMenu(props: OptionMenuProps) {
         open={open}
         onClose={handleCloseMenu}
         PaperProps={{
-          style: {
+          sx: {
+            color: "white",
             maxHeight: ITEM_HEIGHT * 4.5,
             width: "9ch",
           },

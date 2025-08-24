@@ -29,13 +29,16 @@ function List(): JSX.Element {
 
   return (
     <div className="List">
-      {user.roleId === Role.User && <Filter setFilteredVacations={setFilteredVacations} />}
+      <div className="actions">
+      {user.roleId === Role.User && <Filter  setFilteredVacations={setFilteredVacations} />}
+      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations} />}
+      {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations} />}
+      </div>
       <div className="CardsContainer">
         {vacations.length === 0 && <p>there are no vacations</p>}
         {vacations.length > 0 && vacations.map(vacation => <VacationCard vacation={vacation} key={vacation.id} role={user.roleId} />)}
       </div>
-      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations} />}
-      {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations} />}
+
     </div>
   );
 }

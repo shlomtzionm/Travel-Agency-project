@@ -1,10 +1,8 @@
 import "./VacationCard.css";
 import { VacationModel } from "../../../Models/vacationModel";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { LikeButton } from "../LikeButton/LikeButton";
+import { useSelector } from "react-redux";
+import { UserModel } from "../../../Models/userModel";
+import { AppState } from "../../../redux/store";
 import { Role } from "../../../Models/enums";
 import OptionMenu from "../OptionMenu/OptionMenu";
 
@@ -15,25 +13,27 @@ interface VacationCardProps {
 
 function VacationCard(props: VacationCardProps): JSX.Element {
   const vacation = props.vacation;
+  const user = useSelector<AppState,Partial< UserModel>>(store => store.user);
+
 
   return (
-    <Card id="MyCard">
-      <CardMedia className="CardImage" image={vacation.imageUrl} />
-      <CardContent className="CardContent">
-        <Typography gutterBottom variant="h6" marginBottom={0}>
-          {vacation.location}
-        </Typography>
-        <Typography variant="body2">start date: {new Date(vacation.startDate).toLocaleDateString()}</Typography>
-        <Typography variant="body2">end date: {new Date(vacation.endDate).toLocaleDateString()}</Typography>
-        <Typography variant="body2" color="text.secondary">
-          {vacation.description}
-        </Typography>
+    <div>
+      <div className="card">
+        <img src={vacation.imageUrl}></img>
+<div className="content">
+  <h3>{vacation.location}</h3>
+<p>{new Date(vacation.startDate).toLocaleDateString()} - {new Date(vacation.endDate).toLocaleDateString()}</p>
+<p>{vacation.price} $</p>
+<p>{vacation.description}</p>
+</div>
+      </div>
+     <div className="options">
+  {user.roleId === Role.Admin && (
+    <OptionMenu vacation={vacation} />
+  )}
+</div>
 
-        <Typography variant="body2">price: ${vacation.price}</Typography>
-      </CardContent>
-      {props.role === Role.User && <LikeButton vacation={vacation} />}
-      {props.role === Role.Admin && <OptionMenu vacation={vacation} />}
-    </Card>
+    </div>
   );
 }
 

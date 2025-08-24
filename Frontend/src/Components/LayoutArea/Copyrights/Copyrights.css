@@ -8,6 +8,7 @@
   justify-content: flex-start;
   gap: 22px;
   padding: 16px;
+  z-index: 10000;
 }
 
 

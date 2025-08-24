@@ -1,43 +1,45 @@
-#MyCard .MyLikeButton,
-#MyCard .OptionMenu {
+.options{
+  width: 100px;
+  width: 100px;
+}
+.card {
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.card .content {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
+  width: 90%;
+  height: 90%;
+  color: white;
+  margin: 32px 24px;
+  text-align: left;
 }
 
-#MyCard {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 8px;
-  background-color: #ffffff;
-  height: 50%;
-  width: 30%;
-  border: 1px solid rgb(201, 200, 199);
+.card .content h3 {
+  font-size: 4em;
 }
 
-.CardContent {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  align-items: flex-start;
-  text-align: start;
-  height: 80%;
-  margin: 2px 0;
+.card .content p {
+  font-size: 1em;
+  font-weight: 500;
 }
-
-.CardContent::-webkit-scrollbar {
-  width: 4px;
-}
-
-.CardContent::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.295);
-  border-radius: 4px;
-}
-
-.CardImage {
-  width: 100%;
-  height: 200px;
+@media (min-width: 300px) {
+  .card img {
+    height: 80vh;
+  }
+  .card .cover {
+    height: 75vh;
+  }
 }

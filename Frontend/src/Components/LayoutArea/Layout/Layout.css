@@ -1,8 +1,8 @@
 .Layout {
-  height: 110vh;
+  height: 100vh;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 8% 79% 17%; /* Four rows with specific heights */
-  overflow-y: hidden;
+  grid-template-rows: 8% 81% 15%; 
   background-color: #ffffff;
+  overflow-x: hidden;
 }
