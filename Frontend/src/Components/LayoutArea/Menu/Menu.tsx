@@ -23,7 +23,7 @@ export function Menu(): JSX.Element {
       {!user && (
         <>
           <span>Hello Guest</span>
-          <img src="icon.ico" className="Icon" />
+          {/* <img src="icon.ico" className="Icon" /> */}
         </>
       )}
 
@@ -32,7 +32,7 @@ export function Menu(): JSX.Element {
           <span>
             Hello {user.firstName} {user.lastName}
           </span>
-          <img src="icon.ico" className="Icon" />
+          {/* <img src="icon.ico" className="Icon" /> */}
           <div className="MenuButtons">
             {user.roleId === Role.Admin && (
               <>
