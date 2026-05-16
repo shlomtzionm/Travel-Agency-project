@@ -2,21 +2,39 @@
   position: absolute;
   align-items: center;
   width: 100vw;
-  height: 50vh;
+  height:90vh;
   justify-content: space-around;
   position: relative;
-  padding: 140px;
-  z-index: 0;
+  padding-bottom: 100px;
   overflow-x: hidden;
 }
 
-.List .actions {
+.List .pagination{
   z-index: 10000;
   position: fixed;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   background-color: rgba(252, 245, 245, 0.758);
   width: 200px;
-  height: 100px;
+  height: 60px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+border-radius: 20px;
+}
+
+
+.List .filter {
+  z-index: 10000;
+  position: fixed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  background-color: rgba(252, 245, 245, 0.758);
+  width: 120px;
+  height: 70px;
   bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
@@ -25,17 +43,17 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
-border-radius: 30px;
+border-radius: 20px;
 }
 
 
-.List .actions:hover {
+.List .filter:hover {
   background-color:rgb(252, 245, 245) ;
 }
 
 .CardsContainer {
   position: absolute;
-  top: 20;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: row;

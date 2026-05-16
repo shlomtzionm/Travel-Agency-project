@@ -23,8 +23,7 @@ function VacationCard(props: VacationCardProps): JSX.Element {
 <div className="content">
   <h3>{vacation.location}</h3>
 <p>{new Date(vacation.startDate).toLocaleDateString()} - {new Date(vacation.endDate).toLocaleDateString()}</p>
-<p>{vacation.price} $</p>
-<p>{vacation.description}</p>
+
 </div>
       </div>
      <div className="options">

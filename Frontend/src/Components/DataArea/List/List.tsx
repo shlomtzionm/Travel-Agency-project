@@ -29,10 +29,13 @@ function List(): JSX.Element {
 
   return (
     <div className="List">
-      <div className="actions">
+      <div className="filter">
       {user.roleId === Role.User && <Filter  setFilteredVacations={setFilteredVacations} />}
-      {user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations} />}
+      </div>
+      <div className="pagination">
+{user.roleId === Role.User && <MyPagination vacations={filteredVacations} setVacationsToDisplay={setVacations} />}
       {user.roleId === Role.Admin && <MyPagination vacations={vacationsFromRedux} setVacationsToDisplay={setVacations} />}
+      
       </div>
       <div className="CardsContainer">
         {vacations.length === 0 && <p>there are no vacations</p>}
